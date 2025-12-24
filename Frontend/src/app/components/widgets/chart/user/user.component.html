@@ -1,0 +1,44 @@
+<div class="small-chart-widget chart-widgets-small">
+   <div class="card">
+     <div class="card-header pb-0">
+       <div class="media">
+         <div class="media-body">
+           <h5>Uses</h5>
+         </div>
+         <div class="icon-box onhover-dropdown"><app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+           <div class="icon-box-show onhover-show-div">
+             <ul> 
+               <li> <a>
+                    Done</a></li>
+               <li> <a>
+                    Pending</a></li>
+               <li> <a>
+                    Rejected</a></li>
+               <li> <a>In Progress  </a></li>
+             </ul>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="card-body">
+       <div class="chart-container">
+         <div class="row">
+           <div class="col-12">
+             <div id="chart-widget9">
+              <apx-chart 
+              [chart]="userchart.chart"
+              [dataLabels]="userchart.dataLabels"
+              [series]="userchart.series"
+              [fill]="userchart.fill"
+              [colors]="userchart.colors"
+              [title]="userchart.title"
+              [xaxis]="userchart.yaxis"
+              [yaxis]="userchart.yaxis">
+              </apx-chart>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

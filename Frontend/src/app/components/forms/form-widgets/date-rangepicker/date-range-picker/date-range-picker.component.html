@@ -1,0 +1,11 @@
+<div class="daterange-card">
+  <h6 class="sub-title">Date Range Picker</h6>
+  <p>The Date Range Picker use the current value of the input to initialize, and update the input if new dates are chosen.</p>
+  <div class="theme-form">
+    <div class="form-group">
+      <input class="form-control digits" type="text" name="daterange" [(ngModel)]="selectedMoments" [selectMode]="'range'"
+      [owlDateTimeTrigger]="dtPicker3" [owlDateTime]="dtPicker3">
+      <owl-date-time #dtPicker3></owl-date-time>
+    </div>
+  </div>
+</div>

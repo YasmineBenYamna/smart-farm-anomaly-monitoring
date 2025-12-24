@@ -1,0 +1,286 @@
+.anomaly-table {
+  font-size: 0.9rem;
+
+  thead {
+    background-color: #f8f9fa;
+    
+    th {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      color: #6c757d;
+      border-bottom: 2px solid #dee2e6;
+      padding: 12px 8px;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #f8f9fa;
+        transform: scale(1.01);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      td {
+        vertical-align: middle;
+        padding: 12px 8px;
+      }
+    }
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  code {
+    background-color: #f1f3f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #212529;
+  }
+  
+  // ✅ Action badge styling
+  .action-badge {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  
+  // ✅ Explanation text styling
+  .explanation-text {
+    display: block;
+    max-width: 200px;
+    line-height: 1.4;
+    color: #6c757d;
+  }
+}
+
+.confidence-bar {
+  min-width: 120px;
+
+  .progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+
+    .progress-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      transition: width 0.6s ease;
+    }
+  }
+}
+
+// Severity badge colors
+.badge-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.badge-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.badge-light {
+  background-color: #e9ecef;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.badge-primary {
+  background-color: #007bff;
+  color: white;
+}
+.anomaly-table {
+  font-size: 0.9rem;
+
+  thead {
+    background-color: #f8f9fa;
+    
+    th {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      color: #6c757d;
+      border-bottom: 2px solid #dee2e6;
+      padding: 12px 8px;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #f8f9fa;
+        transform: scale(1.01);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      td {
+        vertical-align: middle;
+        padding: 12px 8px;
+      }
+    }
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  code {
+    background-color: #f1f3f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #212529;
+  }
+  
+  // ✅ Action badge styling
+  .action-badge {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  
+  // ✅ Explanation text styling
+  .explanation-text {
+    display: block;
+    max-width: 200px;
+    line-height: 1.4;
+    color: #6c757d;
+  }
+}
+
+.confidence-bar {
+  min-width: 120px;
+
+  .progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+
+    .progress-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      transition: width 0.6s ease;
+    }
+  }
+}
+
+// Severity badge colors
+.badge-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.badge-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.badge-light {
+  background-color: #e9ecef;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.badge-primary {
+  background-color: #007bff;
+  color: white;
+}
+.anomaly-table {
+  // ... existing styles ...
+
+  // ✅ FIX: Limit column widths
+  table-layout: fixed;
+  width: 100%;
+
+  thead th {
+    &:nth-child(1) { width: 12%; }  // Timestamp
+    &:nth-child(2) { width: 12%; }  // Anomaly Type
+    &:nth-child(3) { width: 8%; }   // Severity
+    &:nth-child(4) { width: 12%; }  // Confidence
+    &:nth-child(5) { width: 10%; }  // Sensor Value
+    &:nth-child(6) { width: 20%; }  // Action
+    &:nth-child(7) { width: 26%; }  // Explanation
+  }
+
+  // ✅ Action badge - truncate if too long
+  .action-badge {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    cursor: help;  // Shows "?" cursor on hover
+  }
+  
+  // ✅ Explanation - truncate with ellipsis
+  .explanation-text {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #6c757d;
+    cursor: help;
+    
+    &:hover {
+      overflow: visible;
+      white-space: normal;
+      background-color: #f8f9fa;
+      padding: 4px;
+      border-radius: 4px;
+      position: relative;
+      z-index: 10;
+    }
+  }
+}
+.chart-scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

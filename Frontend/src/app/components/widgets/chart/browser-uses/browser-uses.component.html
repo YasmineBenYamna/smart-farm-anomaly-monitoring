@@ -1,0 +1,37 @@
+<div class="donut-chart-widget">
+   <div class="card">
+     <div class="card-header pb-0">
+       <div class="media">
+         <div class="media-body">
+           <h5>Browser Uses</h5>
+         </div>
+         <div class="icon-box onhover-dropdown"> 
+           <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+          <div class="icon-box-show onhover-show-div">
+            <ul> 
+              <li> <a>
+                   Done</a></li>
+              <li> <a>
+                   Pending</a></li>
+              <li> <a>
+                   Rejected</a></li>
+              <li> <a>In Progress  </a></li>
+            </ul>
+          </div>
+        </div>
+       </div>
+     </div>
+     <div class="card-body">
+       <div id="chart-widget13">
+        <apx-chart
+        [series]="browserCandleStick.series"
+        [chart]="browserCandleStick.chart"
+        [xaxis]="browserCandleStick.xaxis"
+        [yaxis]="browserCandleStick.yaxis"
+        [title]="browserCandleStick.title"
+        [plotOptions]="browserCandleStick.plotOptions">
+      </apx-chart>
+       </div>
+     </div>
+   </div>
+ </div>

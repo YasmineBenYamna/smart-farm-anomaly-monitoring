@@ -1,0 +1,96 @@
+<div class="card mb-0">
+  <div class="card-header d-flex">
+    <h5>Personal</h5><span class="f-14 pull-right mt-0">5 Contacts</span>
+  </div>
+  <div class="card-body p-0">
+    <div class="row list-persons" id="addcon">
+      <div class="col-xl-4 xl-50 col-md-5 box-col-6">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          @for (contact of contacts; track contact) {
+          <a class="contact-tab-0 nav-link" role="tab">
+            <div class="media">
+              <img class="img-50 img-fluid m-r-20 rounded-circle update_img_1" src="{{contact.image}}" alt="">
+              <div class="media-body">
+                <h6> <span class="first_name_1">{{contact.firstName}} </span><span
+                    class="last_name_1">{{contact.lastName}}</span></h6>
+                <p class="email_add_1">{{contact.mail}}</p>
+              </div>
+            </div>
+          </a>
+          }
+        </div>
+      </div>
+      <div class="col-xl-8 xl-50 col-md-7 box-col-6">
+        <div class="tab-content" id="v-pills-tabContent" [ngStyle]="{ 'display': editContact ? 'none' : ''}">
+          <div class="tab-pane contact-tab-0 tab-content-child fade show active" id="v-pills-user" role="tabpanel"
+            aria-labelledby="v-pills-user-tab">
+            <div class="profile-mail">
+              <div class="media align-items-center"><img class="img-100 img-fluid m-r-20 rounded-circle update_img_0"
+                  src="assets/images/user/2.jpg" alt="">
+                <input class="updateimg" type="file" name="img">
+                <div class="media-body mt-0">
+                  <h5><span class="first_name_0">Bucky </span><span class="last_name_0">Barnes</span></h5>
+                  <p class="email_add_0">barnes&#64;gmail.com</p>
+                  <ul>
+                    <li><a (click)="editContact = true">Edit</a></li>
+                    <li (click)="deleteContact()"><a>Delete</a></li>
+                    <li (click)="openHistory()"><a>History</a></li>
+                    <li (click)="openPrint()"><a>Print</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="email-general">
+                <h6 class="mb-3">General</h6>
+                <ul>
+                  <li>Name <span class="font-primary first_name_0">Bucky</span></li>
+                  <li>Gender <span class="font-primary">Male</span></li>
+                  <li>Birthday<span class="font-primary"> <span class="birth_day_0">18</span>
+                      <span class="birth_month_0 ms-1">May</span>
+                      <span class="birth_year_0 ms-1">1994</span></span></li>
+                  <li>Personality<span class="font-primary personality_0">Cool</span></li>
+                  <li>City<span class="font-primary city_0">moline acres</span></li>
+                  <li>Mobile No<span class="font-primary mobile_num_0">+0 1800 76855</span></li>
+                  <li>Email Address <span class="font-primary email_add_0">barnes&#64;gmail.com </span></li>
+                  <li>Website<span class="font-primary url_add_0">www.test.com</span></li>
+                  <li>Interest<span class="font-primary interest_0">photography</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-editform" [ngStyle]="{ 'display': !editContact ? 'none' : ''}">
+          <form>
+            <div class="row g-2">
+              <app-general></app-general>
+            </div>
+            <div class="row g-2 more-data">
+              <app-personal-content></app-personal-content>
+              <div class="mb-3 col-md-12">
+                <app-address-content></app-address-content>
+              </div>
+            </div>
+            <button class="btn btn-secondary update-contact" type="button">Save</button>
+            <button class="btn btn-primary ms-2" type="button" (click)="editContact = false">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="right-history" [class.show]="open">
+  <div class="modal-header p-20">
+    <h6 class="modal-title w-100">Contact History<span class="pull-right"><a (click)="openHistory()"
+          class="closehistory" href="javascript:void(0)"><i class="icofont icofont-close"></i></a></span></h6>
+  </div>
+  <div class="history-details">
+    <div class="text-center"><i class="icofont icofont-ui-edit"></i>
+      <p>Contact has not been modified yet.</p>
+    </div>
+    <div class="media"><i class="icofont icofont-star me-3"></i>
+      <div class="media-body mt-0">
+        <h6 class="mt-0">Contact Created</h6>
+        <p class="mb-0">Contact is created via mail</p><span class="f-12">Sep 10, 2022 4:00</span>
+      </div>
+    </div>
+  </div>
+</div>

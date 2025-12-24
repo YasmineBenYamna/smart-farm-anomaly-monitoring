@@ -1,0 +1,60 @@
+<app-breadcrumb [title]="'Learning List'" [items]="['Learning']" [active_item]="'Learning List'"></app-breadcrumb>
+<div class="container-fluid filter-page">
+  <div class="row learning-block">
+    <div class="col-xl-9 xl-60 box-col-8">
+      <div class="row">
+        @for (lTop of learningTop; track lTop) {
+        <div class="col-xl-12 col-sm-6">
+          <div class="card">
+            <div class="blog-box blog-list row">
+              <div class="col-xl-5 col-12"><img class="img-fluid sm-100-w" src="{{lTop.img}}" alt=""></div>
+              <div class="col-xl-7 col-12">
+                <div class="blog-details">
+                  <div class="blog-date"><span>{{lTop.date}}</span>{{lTop.month}}</div><a
+                    routerLink="/learning/detailed-course">
+                    <h6>{{lTop.title}}</h6>
+                  </a>
+                  <div class="blog-bottom-content">
+                    <ul class="blog-social">
+                      <li>by: {{lTop.by}}</li>
+                      <li>{{lTop.hits}} Hits</li>
+                    </ul>
+                    <hr>
+                    <p class="mt-0">{{lTop.dace}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+        @for (l of learning; track l) {
+        <div class="col-xl-4 xl-50 col-sm-6 box-col-6">
+          <div class="card">
+            <div class="product-box learning-box">
+              <div class="product-img"><img class="img-fluid top-radius-blog" src="{{l.img}}" alt="">
+                <div class="product-hover">
+                  <ul>
+                    <li><a href="learning/detailed-course"><i class="icon-link"></i></a></li>
+                    <li><a href="learning/detailed-course"><i class="icon-import"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="details-main"><a routerLink="/learning/detailed-course">
+                  <div class="bottom-details">
+                    <h6>{{l.title}}</h6>
+                  </div>
+                </a>
+                <p>{{l.dace}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="col-xl-3 xl-40 box-col-4a">
+      <app-learning-filter></app-learning-filter>
+    </div>
+  </div>
+</div>

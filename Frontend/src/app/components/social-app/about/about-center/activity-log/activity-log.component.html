@@ -1,0 +1,22 @@
+<div class="card">
+   <div class="card-header">
+      <h5>Activity Log</h5>
+   </div>
+   <div class="card-body pt-0">
+      <div class="activity-log">
+         @for (d of todays; track d) {
+         <div class="my-activity">
+            <h6 class="f-w-600">{{d.title}}</h6>
+            @for (c of d.today; track c) {
+            <p>
+               <span>
+                  <i class="m-r-20" data-feather="thumbs-up"></i>
+               </span>
+               {{c.data}}
+            </p>
+            }
+         </div>
+         }
+      </div>
+   </div>
+</div>

@@ -1,0 +1,64 @@
+<app-breadcrumb [title]="'Breadcrumb'" [items]="['Bonus Ui']" [active_item]="'Breadcrumb'"></app-breadcrumb>
+<div class="container-fluid breadcrumb-span">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="card default-bootstrap-breadcrumb-section">
+        <div class="card-header pb-0">
+          <h5>Default bootstrap breadcrumb</h5><span>use class <code>.breadcrumb to ol</code></span>
+        </div>
+        <div class="card-body">
+          <ol class="breadcrumb bg-white p-t-0 p-l-0">
+            <li class="breadcrumb-item active">Home</li>
+          </ol>
+          <ol class="breadcrumb bg-white p-l-0">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+            <li class="breadcrumb-item active">Library</li>
+          </ol>
+          <ol class="breadcrumb bg-white p-l-0">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Library</a></li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol>
+          <ol class="breadcrumb bg-white p-b-0 p-l-0">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fa fa-home"></i></a></li>
+            <li class="breadcrumb-item">Library</li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Nav breadcrumb</h5><span>use class <code>.breadcrumb to nav</code> similar to navigation</span>
+        </div>
+        <div class="card-body">
+          <nav class="breadcrumb"><a class="breadcrumb-item" href="javascript:void(0)">Home</a><a
+              class="breadcrumb-item" href="javascript:void(0)">Library</a><span
+              class="breadcrumb-item active">Bootstrap</span></nav>
+          <nav class="breadcrumb breadcrumb-icon"><a class="breadcrumb-item" href="javascript:void(0)">Home</a><a
+              class="breadcrumb-item" href="javascript:void(0)">Library</a><span
+              class="breadcrumb-item active">Bootstrap</span></nav>
+          <nav class="breadcrumb breadcrumb-no-divider mb-0"><a class="breadcrumb-item"
+              href="javascript:void(0)">Home</a><a class="breadcrumb-item" href="javascript:void(0)">Library</a><span
+              class="breadcrumb-item active">Bootstrap</span></nav>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="card colored-breadcrumb">
+        <div class="card-header pb-0">
+          <h5>Colored breadcrumb</h5><span>use class <code>.breadcrumb-colored .bg-primary</code></span>
+        </div>
+        <div class="card-body">
+            @for (data of breadcrumb; track data) {
+            <ol class="breadcrumb breadcrumb-colored m-b-30 bg-{{data}}">
+              <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+              <li class="breadcrumb-item active">Library</li>
+            </ol>
+            }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

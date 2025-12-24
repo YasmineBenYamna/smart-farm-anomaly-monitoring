@@ -1,0 +1,21 @@
+<app-breadcrumb [title]="'Masonry gallery'" [items]="['Gallery']" [active_item]="'Masonry gallery'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>MASONRY GALLERY</h5>
+        </div>
+        <div class="card-body photoswipe-pb-responsive" itemprop="associatedMedia" itemscope="">
+          <ngx-masonry [options]="masonryOptions" style="width: 100%;" [ordered]="true" (itemsLoaded)="itemsLoaded()">
+            @for (image of masonryImages; track image) {
+            <div class="m-b-30" ngxMasonryItem [prepend]="image[0]" style="width: 246px;">
+              <img [src]="image[1]" width="100%" class="img-fluid">
+            </div>
+            }
+          </ngx-masonry>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

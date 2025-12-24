@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Text or background utilities</h5><span>Regular table background variants are not available with the inverse
+      table, however, you may use Classes
+      <code>bg-dark</code>,<code>bg-warning</code>,<code>bg-success</code>,<code>bg-info</code>,<code>bg-danger</code>,<code>bg-primary</code>,<code>bg-secondary</code>,<code>bg-light</code>
+      in<code>td</code></span>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-borderedfor">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Heading</th>
+          <th scope="col">Heading</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (text of textOrBgUtilities;let i = $index; track text) {
+        <tr class="table-active">
+          <td class="bg-{{text}}">{{i}}</td>
+          <td class="bg-{{text}}">{{text}}</td>
+          <td class="bg-{{text}}">{{text}}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

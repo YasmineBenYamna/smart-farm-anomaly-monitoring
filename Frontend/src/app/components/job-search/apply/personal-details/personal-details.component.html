@@ -1,0 +1,94 @@
+<form class="form theme-form">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label class="form-label" for="exampleFormControlInput1">Full Name:<span class="font-danger">*</span></label>
+        <input class="form-control" id="exampleFormControlInput1" type="text" placeholder="Enter your full name">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label class="form-label" for="exampleFormControlInput3">Email:<span class="font-danger">*</span></label>
+        <input class="form-control" id="exampleFormControlInput3" type="email" placeholder="Enter email">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label class="form-label" for="exampleFormControlpassword">Password:<span class="font-danger">*</span></label>
+        <input class="form-control" id="exampleFormControlpassword" type="password" placeholder="Enter password">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label class="form-label" for="exampleFormControlpassword1">Repeat Password:<span
+            class="font-danger">*</span></label>
+        <input class="form-control" id="exampleFormControlpassword1" type="password" placeholder="Repeat password">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label class="form-label">Birth Date</label>
+        <select class="js-example-basic-single form-select col-sm-12">
+          <optgroup label="Month">
+            <option value="Jan">January</option>
+            <option value="Feb">February</option>
+            <option value="Mar">March</option>
+            <option value="Apr">April</option>
+            <option value="May">May</option>
+            <option value="Jun">June</option>
+            <option value="Jul">July</option>
+            <option value="Aug">August</option>
+            <option value="Sep">September</option>
+            <option value="Oct">October</option>
+            <option value="Nov">November</option>
+            <option value="Dec">December</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div>
+        <div class="col-form-label">
+          <label class="form-label"></label>
+          <select class="js-example-basic-single form-select col-sm-12">
+            <optgroup label="Day">
+              @for (o of date; track o) {
+              <option value="{{0}}">{{o}}</option>
+              }
+            </optgroup>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div>
+        <div class="col-form-label">
+          <label class="form-label"></label>
+          <select class="js-example-basic-single form-select col-sm-12">
+            <optgroup label="Year">
+              @for (o of year; track o) {
+              <option value="{{0}}">{{o}}</option>
+              }
+            </optgroup>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label class="form-label" for="exampleFormControlInput4">Phone Number:</label>
+        <input class="form-control" id="exampleFormControlInput4" type="number" placeholder="Enter Phone no.">
+      </div>
+    </div>
+  </div>
+</form>

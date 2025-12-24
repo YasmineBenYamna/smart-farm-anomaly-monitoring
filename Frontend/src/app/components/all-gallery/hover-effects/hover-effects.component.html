@@ -1,0 +1,34 @@
+<app-breadcrumb [title]="'Hover effect'" [items]="['Gallery']" [active_item]="'Hover effect'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row">
+      @for (data of hover; track data) {
+      <div class="col-sm-12">
+         <div class="card">
+            <div class="card-header pb-0">
+               <h5>Hover Effect <span class="digits">{{data.hoverDigits}}</span></h5>
+            </div>
+            <div class="card-body" id="aniimated-thumbnials">
+               <div class="my-gallery gallery" itemscope="">
+                  <section>
+                     <div class="row" gallerize>
+                        @for (img of imageData; track img) {
+                        <figure class="col-sm-3 col-6">
+                           <div class="img-hover {{data.hoverClass}}">
+                              <a>
+                                 <div>
+                                    <img [src]="img.srcUrl" />
+                                 </div>
+                              </a>
+                           </div>
+                        </figure>
+
+                        }
+                     </div>
+                  </section>
+               </div>
+            </div>
+         </div>
+      </div>
+      }
+   </div>
+</div>

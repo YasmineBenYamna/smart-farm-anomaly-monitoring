@@ -1,0 +1,77 @@
+<app-breadcrumb [title]="'Blog Details'" [items]="['Blog']" [active_item]="'Blog Details'"></app-breadcrumb>
+<div class="container-fluid blog-page blog-details-page">
+  <div class="row">
+    <div class="col-xxl-6 set-col-12 box-col-5 xl-40">
+      <div class="card">
+        <div class="blog-box blog-shadow bg-size"
+          style="background-image: url('assets/images/blog/blog.jpg'); background-size: cover; background-position: center center; display: block;">
+          <img class="img-fluid bg-img-cover" src="assets/images/blog/blog.jpg" alt="" style="display: none;">
+          <div class="blog-details">
+            <p>25 July 2022</p>
+            <h4>A huge part of it is the incomparable beauty you can encounter every day.</h4>
+            <ul class="blog-social">
+              <li><i class="icofont icofont-user"></i>Mark Jecno</li>
+              <li><i class="icofont icofont-thumbs-up"></i>02 Hits</li>
+              <li><i class="icofont icofont-ui-chat"></i>598 Comments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-6 set-col-12 box-col-7 xl-60">
+      <div class="row">
+        @for (b of blog; track b) {
+        <div class="col-xl-12 col-md-6">
+          <div class="card">
+            <div class="blog-box blog-list row">
+              <div class="col-xl-6 col-12">
+                <div class="blog-wrraper"><a href="blog/blog-single"><img class="img-fluid sm-100-wp p-0"
+                      src="{{b.img}}" alt=""></a></div>
+              </div>
+              <div class="col-xl-6 col-12">
+                <div class="blog-details">
+                  <div class="blog-date"><span>{{b.date}}</span> {{b.year}}</div><a>
+                    <h6>{{b.details}}</h6>
+                  </a>
+                  <div class="blog-bottom-content">
+                    <ul class="blog-social">
+                      <li>by: Admin</li>
+                      <li>{{b.hits}} Hits</li>
+                    </ul>
+                    <hr>
+                    <p class="mt-0">{{b.details1}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    @for (blog of BlogData; track blog) {
+    <div class="col-sm-6 col-xl-3 box-col-6 dash-xl-50">
+      <div class="card">
+        <div class="blog-box blog-grid">
+          <div class="blog-wrraper"><a routerLink="/blog/blog-single"><img class="img-fluid top-radius-blog"
+                src="{{blog.img}}" alt=""></a></div>
+          <div class="blog-details-second">
+            <div class="blog-post-date"><span class="blg-month">{{blog.month}}</span><span
+                class="blg-date">{{blog.date}}</span></div><a href="blog/blog-single">
+              <h6 class="blog-bottom-details">{{blog.details}}</h6>
+            </a>
+            <p>{{blog.details1}}</p>
+            <div class="detail-footer">
+              <ul class="sociyal-list">
+                <li><i class="fa fa-user-o"></i>admin</li>
+                <li><i class="fa fa-comments-o"></i>{{blog.comment}}</li>
+                <li><i class="fa fa-thumbs-o-up"></i>{{blog.hits}} like</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="card">
+   <div class="card-header">
+      <h5>Pepole You May Know</h5>
+   </div>
+   <div class="card-body avatar-showcase pt-0">
+      <div class="pepole-knows">
+         <ul>
+            @for (add of addFriend; track add) {
+            <li>
+               <div class="add-friend text-center"><img class="img-60 img-fluid rounded-circle" alt=""
+                     src="{{add.profile}}"><span class="d-block f-w-600">{{add.name}}</span>
+                  <button class="btn btn-primary btn-xs">Add Friend</button>
+               </div>
+            </li>
+            }
+         </ul>
+      </div>
+   </div>
+</div>

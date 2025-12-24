@@ -1,0 +1,24 @@
+<div class="card">
+   <div class="card-header">
+      <h5 class="p-0">
+         <button class="btn btn-link ps-0" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample">Activity Feed</button>
+      </h5>
+   </div>
+   <div class="collapse show" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+      @for (activity of activityFeed; track activity) {
+      <div class="card-body social-status filter-cards-view">
+         <div class="media">
+            <img class="img-50 rounded-circle m-r-15" src="{{activity.profile}}" alt="">
+            <div class="media-body">
+               <a href="users/users-profile">
+                  <span class="f-w-600 d-block">{{activity.name}}</span>
+               </a>
+               <p>Commented on Shaun Park's <a href="javascript:void(0)">Photo</a></p>
+               <span class="light-span">{{activity.time}}</span>
+            </div>
+         </div>
+      </div>
+      }
+   </div>
+</div>

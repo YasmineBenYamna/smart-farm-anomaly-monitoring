@@ -1,0 +1,37 @@
+<div class="email-sidebar"><a class="btn btn-primary email-aside-toggle" (click)="openMenu()" href="javascript:void(0)">Task filter</a>
+   <div class="email-left-aside" [class.open]="open">
+     <div class="card">
+       <div class="card-body">
+         <div class="email-app-sidebar left-bookmark">
+           <div class="media">
+             <div class="media-size-email"><img class="me-3 rounded-circle" src="assets/images/user/user.png" alt=""></div>
+             <div class="media-body">
+               <h6 class="f-w-600">MARK JENCO</h6>
+               <p>Markjecno&#64;gmail.com</p>
+             </div>
+           </div>
+           <ul class="nav main-menu custom-scrollbar" role="tablist">
+             <li class="nav-item">
+               <button class="btn-primary badge-light btn-block btn-mail w-100" type="button" (click)="openNewTask()"><i class="me-2" data-feather="check-circle"></i>New Task</button>
+             </li>
+             <li class="nav-item"><span class="main-title"> Views</span></li>
+             <li><a id="pills-created-tab" role="tab" aria-controls="pills-created" aria-selected="true"><span class="title"> Created by me</span></a></li>
+             <li><a class="show" id="pills-todaytask-tab"><span class="title"> Today's Tasks</span></a></li>
+             <li><a class="show" id="pills-delayed-tab" role="tab"><span class="title"> Delayed Tasks</span></a></li>
+             <li><a class="show" id="pills-upcoming-tab" role="tab"><span class="title">Upcoming Tasks</span></a></li>
+             <li><a class="show" id="pills-weekly-tab" role="tab"><span class="title">This week tasks</span></a></li>
+             <li><a class="show" id="pills-monthly-tab" role="tab"><span class="title">This month tasks</span></a></li>
+             <li><a class="show" id="pills-assigned-tab" role="tab" ><span class="title">Assigned to me</span></a></li>
+             <li><a class="show" id="pills-tasks-tab"  role="tab" ><span class="title">My tasks</span></a></li>
+             <li>
+               <hr>
+             </li>
+             <li><span class="main-title"> Tags<span class="pull-right"><a (click)="openTaskTag()"><app-feather-icon [icon]="'plus-circle'"></app-feather-icon></a></span></span></li>
+             <li><a class="show" id="pills-notification-tab" role="tab" aria-controls="pills-notification" aria-selected="false"><span class="title"> Notification</span></a></li>
+             <li><a class="show" id="pills-newsletter-tab" role="tab" aria-controls="pills-newsletter" aria-selected="false"><span class="title"> Newsletter</span></a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

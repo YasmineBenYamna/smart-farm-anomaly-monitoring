@@ -1,0 +1,30 @@
+<app-breadcrumb [title]="'Date Range'" [items]="['Form Widget']" [active_item]="'Date Range'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="card">
+     <div class="card-header pb-0">
+       <h5>Date Range Picker</h5>
+     </div>
+     <div class="card-body">
+       <div class="row date-range-picker">
+         <div class="col-xl-6">
+           <app-date-range-picker></app-date-range-picker>
+         </div>
+         <div class="col-xl-6">
+           <div class="daterange-card">
+             <h6 class="sub-title">Single Date Picker</h6>
+             <p>The Date Range Picker can be turned into a single date picker widget with only one calendar. In this example, dropdowns to select a month and year have also been enabled at the top of the calendar to quickly jump to different months.</p>
+             <div class="theme-form">
+               <div class="form-group">
+                 <input class="form-control digits" name="birthdate" placeholder="yyyy-mm-dd" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3">
+                 <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="col-xl-12">
+           <app-input-initially-empty></app-input-initially-empty>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

@@ -1,0 +1,55 @@
+<app-breadcrumb [title]="'List View'" [items]="['Job Search']" [active_item]="'List View'"></app-breadcrumb>
+<div class="container-fluid filter-page">
+  <div class="row">
+    <div class="col-xl-3 xl-40 box-col-5">
+      <app-job-filter></app-job-filter>
+    </div>
+    <div class="col-xl-9 xl-60 box-col-7">
+      @for (job of jobCards; track job) {
+      <div class="card" [class.ribbon-vertical-left-wrapper]="job.tag3 == true"
+        [class.ribbon-vertical-left-wrapper]="job.tag2 == true">
+        @if (job.tag2 == true) {
+        <div class="ribbon ribbon-bookmark ribbon-vertical-left ribbon-secondary">
+          <i class="icofont icofont-award"></i>
+        </div>
+        }
+        @if (job.tag2 == true) {
+        <div class="ribbon ribbon-bookmark ribbon-vertical-left ribbon-primary">
+          <i class="icofont icofont-globe-alt"></i>
+        </div>
+        }
+        <div class="job-search">
+          <div class="card-body">
+            <div class="media"><img class="img-40 img-fluid m-r-20" src="{{job.iconImg}}" alt="">
+              <div class="media-body">
+                <h6 class="f-w-600"><a routerLink="/job-search/job-details">{{job.title}}</a><span
+                    class="pull-right">{{job.day}}</span>
+                  @if (job.NewTag == 'New') {
+                  <span class="badge badge-primary pull-right">{{job.NewTag}}</span>
+                  }
+                </h6>
+                <p>{{job.subTitle}}</p>
+                <ngb-rating [rate]="job.rating"></ngb-rating>
+              </div>
+            </div>
+            <p>
+              {{job.dace}}
+            </p>
+          </div>
+        </div>
+      </div>
+      }
+      <div class="job-pagination">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-primary">
+            <li class="page-item disabled"><a class="page-link" href="javascript:void(0)">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0)">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

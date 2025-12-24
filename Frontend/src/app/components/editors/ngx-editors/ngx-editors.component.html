@@ -1,0 +1,20 @@
+<app-breadcrumb [title]="'Ngx Editors'" [items]="['Apps']" [active_item]="'Ngx Editors'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row">
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Ngx Editor</h5>
+         </div>
+         <div class="card-body">
+            <div class="NgxEditor__Wrapper">
+              <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+              <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+            </div>
+         </div>
+       </div>
+     </div>
+     
+   </div>
+ </div>
+

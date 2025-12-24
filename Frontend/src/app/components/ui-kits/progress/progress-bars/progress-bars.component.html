@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header pb-0">
+    <h5>{{bars.title}}</h5><span [innerHTML]="bars.dace"></span>
+  </div>
+  <div class="card-body progress-showcase">
+    @for (c of bars.bar; track c) {
+    <div class="progress {{bars.sizeClass}}" [ngStyle]="{'height': c.height}">
+      <div class="progress-bar bg-{{c.color}}" role="progressbar" [ngStyle]="{'width': c.style}" aria-valuemin="0"
+        aria-valuemax="100"></div>
+    </div>
+    }
+  </div>
+</div>

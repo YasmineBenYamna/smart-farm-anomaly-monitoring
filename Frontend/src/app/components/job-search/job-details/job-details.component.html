@@ -1,0 +1,69 @@
+<app-breadcrumb [title]="'Job Details'" [items]="['Job Search']" [active_item]="'Job Details'"></app-breadcrumb>
+<div class="container-fluid filter-page">
+  <div class="row">
+    <div class="col-xl-3 xl-40 box-col-5">
+      <app-job-filter></app-job-filter>
+    </div>
+    <div class="col-xl-9 xl-60 box-col-7">
+      <div class="card">
+        <app-job-apply></app-job-apply>
+      </div>
+      <div class="header-faq">
+        <h4 class="mb-0 f-w-600">Similar jobs</h4>
+      </div>
+      <div class="row">
+        @for (job of jobCards; track job) {
+        <div class="col-xl-6 xl-100 box-col-12">
+          <div class="card">
+            <div class="job-search">
+              <div class="card-body">
+                <div class="media">
+                   @if (job.iconImg) {
+                     <img class="img-40 img-fluid m-r-20" src="{{job.iconImg}}" alt="">
+                   }
+                  <div class="media-body">
+                    <h6 class="f-w-700">
+                      <a [routerLink]="['/job-search/list-view']">{{job.title}}</a>
+                      @if (job.NewTag == 'New') {
+                        <span class="badge badge-primary pull-right">{{job.NewTag}}</span>
+                      }
+                    </h6>
+                    <p>{{job.subTitle}}</p>
+                    <ngb-rating [rate]="job?.rating"></ngb-rating>
+                  </div>
+                </div>
+                <p>{{job.para}} </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+        <div class="col-xl-12">
+          <div class="card">
+            <div class="job-search">
+              <div class="card-body">
+                <div class="media"><img class="img-40 img-fluid m-r-20" src="assets/images/job-search/3.jpg" alt="">
+                  <div class="media-body">
+                    <h6 class="f-w-700"><a href="javascript:void(0)">Senior UX designer</a><span class="pull-right">5
+                        days ago</span></h6>
+                    <p>Sutherland <span>Lelystad, Netherlands </span></p>
+                    <ul class="rating">
+                      <li><i class="fa fa-star font-warning"></i></li>
+                      <li><i class="fa fa-star font-warning"></i></li>
+                      <li><i class="fa fa-star font-warning"></i></li>
+                      <li><i class="fa fa-star font-warning"></i></li>
+                      <li><i class="fa fa-star-o font-warning"></i></li>
+                    </ul>
+                  </div>
+                </div>
+                <p>Woody equal ask saw sir weeks aware decay. Entrance prospect removing we packages strictly is no
+                  smallest he. For hopes may chief get hours day rooms. Oh no turned behind polite piqued enough at.
+                  Forbade few through inquiry blushes you. Cousin no itself eldest it in dinner latter missed no.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

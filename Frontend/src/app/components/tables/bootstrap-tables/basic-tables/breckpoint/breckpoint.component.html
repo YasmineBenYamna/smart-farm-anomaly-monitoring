@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Breakpoint Specific</h5><span>Use
+      <code>.table-responsive"<span>&#10100;</span>-sm|-md|-lg|-xl|-xxl<span>&#10101;</span>"</code> functions like a
+      heading for a table. It helps users with screen readers to find a table and understand what it’s about and decide
+      if they want to read it.</span>
+  </div>
+  <div class="card-block row">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+      <div class="table-responsive">
+        <table class="table table-responsive-sm">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Order Id</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of breckpointSpecific; track item) {
+            <tr>
+              <th scope="row">{{item.id}}</th>u
+                @for (i of item.data; track i) {
+                <td>{{i}}</td>
+                }
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

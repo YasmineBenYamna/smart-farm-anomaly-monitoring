@@ -1,0 +1,66 @@
+<div class="container-fluid p-0">
+  <div class="row">
+    <div class="col-12">
+      <div class="login-card">
+        <form class="theme-form login-form" [formGroup]="loginForm">
+          <h4>Login</h4>
+          <h6>Welcome back! Log in to your account.</h6>
+          <div class="form-group">
+            <label>Username</label>
+            <div class="input-group"><span class="input-group-text"><i class="icon-username"></i></span>
+              <input class="form-control" type="username" placeholder="your username" formControlName="username" />
+              @if (loginForm.controls['username'].touched && loginForm.controls['username'].errors?.['required']) {
+              <div class="text text-danger mt-1"> username is required </div>
+              }
+              @if (loginForm.controls['username'].touched && loginForm.controls['username'].errors?.['username']) {
+              <div class="text text-danger mt-1"> Invalid username </div>
+              }
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
+              <input class="form-control" [type]="show ? 'text' : 'password'" formControlName="password" required=""
+                placeholder="*********" />
+              @if (show) {
+              <div class="show-hide" (click)="showPassword()"><span class="Hide"></span></div>
+              } @else {
+              <div class="show-hide" (click)="showPassword()"><span class="show"></span></div>
+              }
+              @if (loginForm.controls['password'].touched && loginForm.controls['password'].errors?.['required']) {
+              <div class="text text-danger mt-1"> Password is required </div>
+              }
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="checkbox ms-1">
+              <input id="checkbox1" type="checkbox" />
+              <label for="checkbox1">Remember password</label>
+            </div><a class="link" [routerLink]="'/authentication/forgot-password'">Forgot password?</a>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" [disabled]="!loginForm.valid" (click)="login()"
+              type="button"><span>Sign In</span> </button>
+          </div>
+          <div class="login-social-title">
+            <h5>Sign in with</h5>
+          </div>
+          <div class="form-group">
+            <ul class="login-social">
+              <li><a href="https://www.linkedin.com" target="_blank"><app-feather-icon
+                    [icon]="'linkedin'"></app-feather-icon></a></li>
+              <li><a href="https://twitter.com" target="_blank"><app-feather-icon
+                    [icon]="'twitter'"></app-feather-icon></a></li>
+              <li><a href="https://www.facebook.com" target="_blank"><app-feather-icon
+                    [icon]="'facebook'"></app-feather-icon></a></li>
+              <li><a href="https://www.instagram.com" target="_blank"><app-feather-icon
+                    [icon]="'instagram'"></app-feather-icon></a></li>
+            </ul>
+          </div>
+          <p>Don't have account?<a class="ms-2" [routerLink]="'/authentication/register/image-one'">Create Account</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

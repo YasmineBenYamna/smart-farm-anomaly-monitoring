@@ -1,0 +1,41 @@
+<app-breadcrumb [title]="'Wishlist'" [items]="['E - Commerce']" [active_item]="'Wishlist'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Wishlist</h5>
+        </div>
+        <div class="card-body whishlist-main">
+          <div class="row">
+            @for (item of listData; track item) {
+            <div class="col-xl-2 box-col-3 col-md-4 col-sm-6">
+              <div class="prooduct-details-box">
+                <div class="media">
+                  <a href="e-commerce/product-page"><img class="align-self-center img-fluid" src="{{ item.img }}"
+                      alt="#" /></a>
+                  <div class="media-body">
+                    <div class="product-name">
+                      <a href="e-commerce/product-page">
+                        <h6>{{ item.name }}</h6>
+                      </a>
+                    </div>
+                    <ngb-rating [rate]="item.rating"></ngb-rating>
+                    <div class="price">
+                      Price<span>: {{ item.price }}$</span>
+                    </div>
+                    <div class="avaiabilty">
+                      <div [ngClass]="item.stock == 'In stock' ? 'text-success' : 'text-danger'">{{ item.stock }}</div>
+                    </div>
+                    <a class="btn btn-primary btn-xs" href="e-commerce/cart">Move to Cart</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

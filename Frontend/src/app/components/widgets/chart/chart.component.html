@@ -1,0 +1,56 @@
+<app-breadcrumb [title]="'Chart'" [items]="['Widgets']" [active_item]="'Chart'"></app-breadcrumb>
+<div class="container-fluid">
+   <!-- Chart widget top Start-->
+   <div class="row">
+     <div class="col-xl-4 col-md-12 box-col-12">
+       <app-charts [data]="linechart1"></app-charts>
+     </div>
+     <div class="col-xl-4 col-md-12 box-col-12">
+      <app-charts [data]="linechart2"></app-charts>
+    </div>
+    <div class="col-xl-4 col-md-12 box-col-12">
+      <app-charts [data]="linechart3"></app-charts>
+    </div>
+   </div>
+   <div class="row">
+     <div class="col-xl-7 col-md-12 box-col-12">
+       <app-marketing-expenses></app-marketing-expenses>
+     </div>
+     <div class="col-xl-5 col-md-12 box-col-12">
+      <app-total-earning></app-total-earning>
+     </div>
+     <div class="col-xl-4 col-lg-12 box-col-6 xl-50">
+       <app-skill-status></app-skill-status>
+     </div>
+     <div class="col-xl-8 col-lg-12 box-col-6 xl-50">
+       <app-order-status></app-order-status>
+     </div>
+   </div>
+   <div class="row">
+     <div class="xl-50 col-xl-7 col-lg-12">
+       <app-live-products></app-live-products>
+     </div>
+     <div class="xl-50 col-xl-5 col-lg-12">
+       <app-turnover></app-turnover>
+     </div>
+     <div class="xl-50 col-xl-5 col-lg-12">
+       <app-monthly-sales></app-monthly-sales>
+     </div>
+     <div class="xl-50 col-xl-7 col-lg-12">
+       <app-user></app-user>
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-sm-12 box-col-12">
+       <app-browser-uses></app-browser-uses>
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-xl-5 col-lg-12 box-col-12">
+       <app-finance></app-finance>
+     </div>
+     <div class="col-xl-7 col-lg-12 box-col-6">
+      <app-order-status2></app-order-status2>
+     </div>
+   </div>
+ </div>

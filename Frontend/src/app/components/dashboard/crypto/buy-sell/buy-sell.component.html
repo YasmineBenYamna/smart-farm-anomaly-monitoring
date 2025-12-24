@@ -1,0 +1,28 @@
+<div class="card buy-sell">
+   <div class="card-header">
+     <div class="media">
+       <div class="media-body">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" [destroyOnHide]="false" class="nav-pills">
+          <li [ngbNavItem]="1" [destroyOnHide]="true">
+            <a ngbNavLink>Buy</a>
+            <ng-template ngbNavContent>
+              <app-buy></app-buy>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="2">
+            <a ngbNavLink>Sell</a>
+            <ng-template ngbNavContent>
+             <app-sell></app-sell>
+            </ng-template>
+          </li>
+        </ul>
+       </div>
+       <div class="media-end">
+         <h5>USD Balance: $ 7200.00</h5>
+       </div>
+     </div>
+   </div>
+   <div class="card-body pt-0">
+      <div [ngbNavOutlet]="nav"></div>
+   </div>
+ </div>

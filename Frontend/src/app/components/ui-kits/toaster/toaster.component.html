@@ -1,0 +1,53 @@
+<app-breadcrumb [title]="'Toaster'" [items]="['Ui Kits']" [active_item]="'Toaster'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row toast-section">
+     <div class="col-12 col-xl-6 col-lg-6 col-md-6">
+       <div class="card live-toast height-equal">
+         <div class="card-header pb-0"> 
+           <h5>Live toast </h5>
+         </div>
+         <div class="card-body position-relative">
+           <button class="btn btn-primary" type="button" id="liveToastBtn" (click)="showSuccess()">Show live toast</button>
+           <div class="position-fixed bottom-0 end-0 p-3 dmo">
+             <div class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+               <div class="toast-header"><img class="rounded me-2 img-20" src="assets/images/avtar/avatar-1.jpg" alt=""><strong class="me-auto">emay walker</strong><small>11 mins ago</small>
+                 <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+               </div>
+               <div class="toast-body"><span>Hello, world! This is a toast message.</span></div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="col-12 col-xl-6 col-lg-6 col-md-6">
+       <div class="card height-equal">
+         <div class="card-header pb-0"> 
+           <h5>Color schemes  </h5>
+         </div>
+         <div class="card-body">
+            <div class="btn-showcase">
+              <button class="btn btn-success" (click)="showSuccess()">Success</button>
+              <button class="btn btn-danger" (click)="showError()">Error</button>
+              <button class="btn btn-info" (click)="showInfo()">Info</button>
+              <button class="btn btn-warning" (click)="showWarning()">Warning</button>
+            </div>
+         </div>
+       </div>
+     </div>
+     <div class="col-12 col-xl-6 col-lg-6 col-md-6"> 
+       <div class="card height-equal-2">
+         <div class="card-header pb-0"> 
+           <h5>Custom content</h5>
+         </div>
+         <div class="card-body">
+            <div class="btn-showcase">
+              <button class="btn btn-primary" (click)="toastTopRight()">Toast Top Right</button>
+              <button class="btn btn-primary" (click)="toastBottomRight()">Toast Bottom Right</button>
+              <button class="btn btn-primary" (click)="toastBottomLeft()">Toast Bottom Left</button>
+              <button class="btn btn-primary" (click)="toastTopLeft()">Toast Top Left</button>
+            </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

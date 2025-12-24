@@ -1,0 +1,19 @@
+<div class="card">
+   <div class="card-header social-header">
+      <h5> <span class="f-w-600">Education and Employement</span><span class="pull-right"><i
+               data-feather="more-vertical"></i></span></h5>
+   </div>
+   <div class="card-body pt-0">
+      <div class="row details-about">
+         @for (education of educationData; track education) {
+         <div class="col-sm-6">
+            <div class="your-details">
+               <h6 class="f-w-600">{{education.title}}</h6>
+               <p>{{education.date}}</p>
+               <p>{{education.desc}}</p>
+            </div>
+         </div>
+         }
+      </div>
+   </div>
+</div>

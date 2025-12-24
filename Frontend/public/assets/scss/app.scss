@@ -1,0 +1,26 @@
+    @import "../../../node_modules/bootstrap/scss/bootstrap";
+    @import "../../../node_modules/ngx-bar-rating/themes/br-horizontal-theme";
+    @import "../../../node_modules/ngx-bar-rating/themes/br-vertical-theme";
+    @import "../../../node_modules/ngx-bar-rating/themes/br-default-theme";
+    @import "../../../node_modules/ngx-bar-rating/themes/br-stars-theme";
+    @import "../../../node_modules/ngx-bar-rating/themes/br-movie-theme";
+    @import "../../../node_modules/ngx-bar-rating/themes/br-square-theme";
+
+    /* Leaflet Map */
+    @import "leaflet/dist/leaflet.css";
+
+    //ng-select
+    @import "@ng-select/ng-select/themes/default.theme.css";
+
+    // calendar
+    @import "../../../node_modules/angular-calendar/scss/angular-calendar.scss";
+
+    @import "ngx-toastr/toastr";
+
+    @import "@danielmoncada/angular-datetime-picker/assets/style/picker.min.css";
+
+    @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+    @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+    @import "./style";
+
+    @import "./themes/update";

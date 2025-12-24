@@ -1,0 +1,110 @@
+<app-breadcrumb [title]="'Avatar'" [items]="['Ui Kits']" [active_item]="'Avatar'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="user-profile">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header pb-0">
+            <h5>Sizing</h5>
+          </div>
+          <div class="card-body">
+            <div class="avatar-showcase">
+              <div class="avatars">
+                @for (i of images; track i) {
+                <div class="avatar"><img class="img-{{i.imgSize}} rounded-circle" src="{{i.img}}" alt="#"></div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header pb-0">
+            <h5>Ratio</h5>
+          </div>
+          <div class="card-body">
+            <div class="avatar-showcase">
+              <div class="avatars">
+                @for (i of images; track i) {
+                <div class="avatar ratio"><img class="b-r-8 img-{{i.imgSize}}" src="{{i.img}}" alt="#"></div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header pb-0">
+            <h5>Groups</h5>
+          </div>
+          <div class="card-body">
+            <div class="avatar-showcase">
+              @for (img of images2; track img) {
+              <div class="customers d-inline-block avatar-group">
+                <ul>
+                  @for (i of img.images; track i) {
+                  <li class="d-inline-block"><img class="img-{{img.imgSize}} rounded-circle" src="{{i.img}}" alt="">
+                  </li>
+                  }
+                </ul>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header pb-0">
+            <h5>Status Indicator</h5>
+          </div>
+          <div class="card-body">
+            <div class="avatar-showcase">
+              <div class="avatars">
+                @for (i of images; track i) {
+                <div class="avatar"><img class="img-{{i.imgSize}} rounded-circle" src="{{i.img}}" alt="#">
+                  <div class="status"></div>
+                </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header pb-0">
+            <h5>Shape</h5>
+          </div>
+          <div class="card-body">
+            <div class="avatar-showcase">
+              <div class="avatars">
+                @for (i of images; track i) {
+                <div class="avatar"><img class="img-{{i.imgSize}} {{i.shape}}" src="{{i.img}}" alt="#"></div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header pb-0">
+            <h5>Initials</h5>
+          </div>
+          <div class="card-body">
+            <div class="avatar-showcase">
+              <div class="avatars">
+                @for (i of initials; track i) {
+                <div class="avatar"><img class="img-{{i.imgSize}} rounded-circle" src="{{i.img}}" alt="#"></div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<app-breadcrumb [title]="'Dropdown'" [items]="['Ui Kits']" [active_item]="'Dropdown'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Basic Dropdown</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropdown-basic">
+            <div class="dropdown">
+              <button class="dropbtn btn-primary" type="button">Dropdown Button <span><i
+                    class="icofont icofont-arrow-down"></i></span></button>
+              <div class="dropdown-content"><a href="javascript:void(0)">Action</a><a href="javascript:void(0)">Another
+                  Action</a><a href="javascript:void(0)">Something Else Here</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Basic Color Dropdown</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropdown-basic">
+            @for (dropdown of basicColorDropdown; track dropdown) {
+            <div class="dropdown">
+              <div class="btn-group mb-0">
+                <button class="dropbtn btn-{{dropdown}}" type="button">Action <span><i
+                      class="icofont icofont-arrow-down"></i></span></button>
+                <div class="dropdown-content"><a href="javascript:void(0)">Action</a><a
+                    href="javascript:void(0)">Another Action</a><a href="javascript:void(0)">Something Else Here</a><a
+                    href="javascript:void(0)">Separated Link </a></div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Dropdown Split Button</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropdown-basic">
+            @for (dropdown of basicColorDropdown; track dropdown) {
+            <div class="btn-group">
+              <button class="btn btn-{{dropdown}}" type="button">{{dropdown | titlecase }} Button</button>
+              <div class="dropdown separated-btn">
+                <button class="btn btn-{{dropdown}}" type="button"><i class="icofont icofont-arrow-down"></i></button>
+                <div class="dropdown-content"><a href="javascript:void(0)">Link 1</a><a href="javascript:void(0)">Link
+                    2</a><a href="javascript:void(0)">Link 3</a></div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Rounded Dropdown</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropdown-basic">
+            @for (c of basicColorDropdown; track c) {
+            <div class="dropdown">
+              <div class="btn-group mb-0">
+                <button class="dropbtn btn-{{c}} btn-round" type="button">Primary Button <span><i
+                      class="icofont icofont-arrow-down"></i></span></button>
+                <div class="dropdown-content"><a href="javascript:void(0)">Action</a><a
+                    href="javascript:void(0)">Another Action</a><a href="javascript:void(0)">Something Else Here</a><a
+                    href="javascript:void(0)">Separated Link </a></div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-dropdown-bottom-component></app-dropdown-bottom-component>
+  </div>
+</div>

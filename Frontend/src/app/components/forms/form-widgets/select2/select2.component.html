@@ -1,0 +1,62 @@
+<app-breadcrumb [title]="'Select'" [items]="['Form Widgets']" [active_item]="'Base Inputs'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="select2-drpdwn">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="card">
+           <div class="card-header pb-0">
+             <h5 class="card-title">Select-2</h5>
+           </div>
+           <div class="card-body">
+             <div class="mb-3">
+               <label class="col-form-label">Default Placeholder</label>
+               <span class="select2 select2-container select2-container--default select2-container--below">
+                <ng-select [items]="Placeholder" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Select cities" [(ngModel)]="selectedCityIds">
+                </ng-select>
+               </span>
+             </div>
+             <div class="mb-3">
+               <label class="col-form-label">Select2 single select</label>
+               <ng-select [items]="cities" bindLabel="name" placeholder="Select city" [(ngModel)]="selectedCity"></ng-select>
+             </div>
+             <div class="mb-3">
+               <label class="col-form-label">Select2 multi select</label>
+                <ng-select [items]="Placeholder" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Select cities" [(ngModel)]="selectedCityIds2">
+                </ng-select>
+             </div>
+             <div class="mb-3">
+               <label class="col-form-label">RTL support</label>
+               <div class="js-example-rtl col-sm-12" >
+                <ng-select [items]="Placeholder" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Select cities" [(ngModel)]="selectedCityIds3">
+                </ng-select>
+               </div>
+             </div>
+             <div class="mb-3">
+               <label class="col-form-label">Disabled Results</label>
+               <ng-select [items]="cities" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Select cities" [(ngModel)]="selectedCityIds4">
+                </ng-select>
+             </div>
+             <div class="mb-3">
+               <label class="col-form-label">Hiding The Search Box</label>
+               <ng-select [items]="Placeholder" bindLabel="name" bindValue="id" [multiple]="true" [(ngModel)]="selectedCityIds5">
+              </ng-select>
+             </div>
+             <div>
+               <label class="col-form-label">Enable-Disable</label>
+               <ng-select class="mb-3" [items]="Placeholder" bindLabel="name" bindValue="id" [multiple]="true" [disabled]="store" placeholder="Select cities" [(ngModel)]="selectedCityIds6">
+                    </ng-select>
+               <button class="btn btn-primary js-programmatic-enable mt-2" (click)="Enable(false)" >Enable</button>
+               <button class="btn btn-secondary js-programmatic-disable mt-2 ms-2" (click)="Enable(true)">Disable</button>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="col-md-6">
+         <app-color-variant></app-color-variant>
+       </div>
+       <div class="col-md-6">
+         <app-full-color-variant></app-full-color-variant>
+       </div>
+     </div>
+   </div>
+ </div>

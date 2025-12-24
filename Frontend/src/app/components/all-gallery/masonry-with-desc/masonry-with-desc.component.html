@@ -1,0 +1,31 @@
+<app-breadcrumb [title]="'Masonry with gallery'" [items]="['Gallery']"
+  [active_item]="'Masonry with gallery'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>MASONRY GALLERY</h5>
+        </div>
+        <div class="card-body photoswipe-pb-responsive" itemprop="associatedMedia" itemscope="">
+          <div class="my-gallery grid gallery-with-description">
+            <ngx-masonry [options]="masonryOptions" style="width: 100%;" [ordered]="true" (itemsLoaded)="itemsLoaded()">
+              @for (image of masonryImages; track image) {
+              <div class="m-b-30" ngxMasonryItem [prepend]="image[0]" style="width: 246px;">
+                <a href="javascript:void(0)">
+                  <img [src]="image[1]" width="100%" class="img-fluid">
+                  <div itemprop="caption description">
+                    <h4>Portfolio Title</h4>
+                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                      industry's standard dummy.</p>
+                  </div>
+                </a>
+              </div>
+              }
+            </ngx-masonry>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

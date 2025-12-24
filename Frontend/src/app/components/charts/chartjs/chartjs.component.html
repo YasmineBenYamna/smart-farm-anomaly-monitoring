@@ -1,0 +1,57 @@
+<app-breadcrumb [title]="'ChartJS Chart'" [items]="['Chart']" [active_item]="'ChartJS Chart'"></app-breadcrumb>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h5>Bar Chart</h5>
+                </div>
+                <div class="card-body chart-block">
+                    <canvas baseChart class="chart" [datasets]="barChartData" [labels]="barChartLabels"
+                        [options]="barChartOptions"  [legend]="barChartLegend"
+                        [type]="barChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h5>Line Chart</h5>
+                </div>
+                <div class="card-body chart-block">
+                    <canvas baseChart class="chart" id="myGraph" [datasets]="lineGraphData" [labels]="lineGraphLabels"
+                          [legend]="lineGraphLegend"
+                        [type]="lineGraphType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h5>Radar Graph</h5>
+                </div>
+                <div class="card-body chart-block chartjs-chart" >
+                    <canvas baseChart class="chart" [datasets]="radarGraphData" [labels]="radarGraphLabels"
+                        [options]="radarGraphOptions"  [legend]="radarGraphLegend"
+                        [type]="radarGraphType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h5>Doughnut Chart</h5>
+                </div>
+                <div class="card-body chart-block chartjs-chart">
+                    <canvas baseChart class="chart" [datasets]="doughnutChartData" [labels]="doughnutChartLabels"
+                        [options]="doughnutChartOptions"
+                        [type]="doughnutChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

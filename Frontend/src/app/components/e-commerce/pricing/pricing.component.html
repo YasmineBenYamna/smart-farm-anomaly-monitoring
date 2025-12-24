@@ -1,0 +1,76 @@
+<app-breadcrumb [title]="'Pricing'" [items]="['E-Commerce']" [active_item]="'Pricing'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Simple Pricing Card</h5>
+        </div>
+        <div class="card-body pricing-content">
+          <div class="row">
+              @for (simple of simplePricingCard; track simple) {
+              <div class="col-xl-3 col-sm-6 xl-50 box-col-6">
+                <div class="card text-center pricing-simple pricing-block">
+                  <div class="card-body">
+                    <h3>{{simple.title}}</h3>
+                    <h1>${{simple.rate}}</h1>
+                    <h6 class="mb-0">{{simple.subTitle}}</h6>
+                  </div><a class="btn btn-lg btn-primary btn-block" href="javascript:void(0)">
+                    <h5 class="mb-0">Purchase</h5>
+                  </a>
+                </div>
+              </div>
+              }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Pricing</h5>
+        </div>
+        <div class="card-body pricing-content pricing-col">
+          <div class="row">
+              @for (price of pricing; track price) {
+              <div class="col-xl-3 col-sm-6 xl-50 box-col-6">
+                <div class="pricing-block card text-center">
+                  <div class="pricing-header">
+                    <h2>{{price.title}}</h2>
+                    <div class="price-box">
+                      <div>
+                        <h3>${{price.price}}</h3>
+                        <p>/ {{price.pricePar}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pricing-list">
+                    <ul class="pricing-inner">
+                      <li>
+                        <h6>{{price.disk}}GB<span> Disk Space</span></h6>
+                      </li>
+                      <li>
+                        <h6>{{price.email}}<span> Email Accounts</span></h6>
+                      </li>
+                      <li>
+                        <h6>{{price.bandwidth}}GB<span> Bandwidth</span></h6>
+                      </li>
+                      <li>
+                        <h6>{{price.subdomains}}<span> Subdomains</span></h6>
+                      </li>
+                      <li>
+                        <h6>{{price.domains}}<span> Domains</span></h6>
+                      </li>
+                    </ul>
+                    <button class="btn btn-primary btn-lg" type="button" data-original-title="btn btn-primary btn-lg"
+                      title="">Subscribe</button>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="faq-title">
+   <h6>User Accounts</h6>
+ </div>
+ <div class="card">
+   <div class="card-header">
+     <h5 class="mb-0">
+       <button class="btn btn-link collapsed" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+       aria-controls="collapseExample"><i data-feather="help-circle"></i>Integrating WordPress with Your Website ?</button>
+     </h5>
+   </div>
+   <div class="collapse" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+     <div class="card-body">
+       <p>How you approach this process will depend on which web host you use. For example, a lot of hosting providers use cPanel, which includes an option to set up subdomains with just a few clicks.</p>
+     </div>
+   </div>
+ </div>
+ <div class="card">
+   <div class="card-header">
+     <h5 class="mb-0">
+       <button class="btn btn-link collapsed" (click)="collapse2.toggle()" [attr.aria-expanded]="!isCollapsed2"
+       aria-controls="collapseExample"><i data-feather="help-circle"></i>WordPress Site Maintenance ?</button>
+     </h5>
+   </div>
+   <div class="collapse" #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+     <div class="card-body">
+       <p>We’ve just published a detailed on how to backup your WordPress website, however, if you’re in a hurry, here’s a quick solution.</p>
+     </div>
+   </div>
+ </div>
+ <div class="card">
+   <div class="card-header">
+     <h5 class="mb-0">
+       <button class="btn btn-link collapsed" (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapsed3"
+       aria-controls="collapseExample"><i data-feather="help-circle"></i> WordPress in Your Language ?</button>
+     </h5>
+   </div>
+   <div class="collapse" #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
+     <div class="card-body">
+       <p>As of version 4.0, you can have WordPress automatically install the language of your choice during the installation process.</p>
+     </div>
+   </div>
+ </div>
+ <div class="card">
+   <div class="card-header">
+     <h5 class="mb-0">
+       <button class="btn btn-link collapsed" (click)="collapse4.toggle()" [attr.aria-expanded]="!isCollapsed4"
+       aria-controls="collapseExample"><i data-feather="help-circle"></i>  Validating a Website ?</button>
+     </h5>
+   </div>
+   <div class="collapse" #collapse4="ngbCollapse" [(ngbCollapse)]="isCollapsed4">
+     <div class="card-body">
+       <p>Validating a website is the process of ensuring that the pages on the website conform to the norms or standards defined by various organizations.</p>
+     </div>
+   </div>
+ </div>
+ <div class="card">
+   <div class="card-header">
+     <h5 class="mb-0">
+       <button class="btn btn-link collapsed" (click)="collapse5.toggle()" [attr.aria-expanded]="!isCollapsed5"
+       aria-controls="collapseExample"><i data-feather="help-circle"></i>Meta Tags in WordPress ?</button>
+     </h5>
+   </div>
+   <div class="collapse" #collapse5="ngbCollapse" [(ngbCollapse)]="isCollapsed5">
+     <div class="card-body">
+       <p>Manually adding meta tags in WordPress is relatively simple. For this demo, we’ll use the example from the WordPress Codex. Imagine you’re Harriet Smith, a veterinarian who blogs about their animal stories on WordPress.</p>
+     </div>
+   </div>
+ </div>

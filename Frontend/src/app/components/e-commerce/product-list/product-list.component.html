@@ -1,0 +1,80 @@
+<app-breadcrumb [title]="'Product Page'" [items]="['E - Commerce']" [active_item]="'Product Page'"></app-breadcrumb>
+<div class="container-fluid list-products">
+  <div class="row">
+    <!-- Individual column searching (text inputs) Starts-->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Individual column searching (text inputs) </h5><span></span>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive product-table">
+            <form>
+              <div class="mb-3 row">
+                <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Search:</label>
+                <div class="col-xs-3 col-sm-auto">
+                  <input id="table-complete-search" type="text" class="form-control" name="searchTerm"
+                    [(ngModel)]="service.searchTerm">
+                </div>
+                 @if (service.loading$ | async) {
+                   <span class="col col-form-label">Loading...</span>
+                 }
+              </div>
+              <table class="display dataTables_wrapper no-footer table" id="basic-1">
+                <thead>
+                  <tr>
+                    <th class="sorting_asc" scope="col">Image</th>
+                    <th class="sorting_asc" scope="col">Details</th>
+                    <th class="sorting_asc" scope="col">Amount</th>
+                    <th class="sorting_asc" scope="col">Stock</th>
+                    <th class="sorting_asc" scope="col">Start date</th>
+
+                    <!-- <th class="sorting_asc" scope="col" sortable="productImg" (sort)="onSort($event)">Image</th> -->
+                    <!-- <th class="sorting_asc" scope="col" sortable="productName" (sort)="onSort($event)">Details</th>
+                   <th class="sorting_asc" scope="col" sortable="amount" (sort)="onSort($event)">Amount</th>
+                   <th class="sorting_asc" scope="col" sortable="stock" (sort)="onSort($event)">Stock</th>
+                   <th class="sorting_asc" scope="col" sortable="startData" (sort)="onSort($event)">Start date</th> -->
+                    <th class="sorting_asc" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of products$ | async; track item) {
+                  <tr class="odd">
+                    <td class="sorting_1"><a href="e-commerce/product-page"><img src="{{item.productImg}}"
+                          alt="{{item.productName}}"></a></td>
+                    <td class="sorting_1"><a href="e-commerce/product-page">
+                        <h6>{{item.productName}}</h6>
+                      </a><span>{{item.productSubName}}</span></td>
+                    <td class="sorting_1">${{item.amount}}</td>
+                    <td class="sorting_1"
+                      [ngClass]="{'font-success' : item.stock === 'In Stock', 'font-danger' : item.stock === 'out of stock', 'font-primary' : item.stock === 'No Signal'}">
+                      {{item.stock}}</td>
+                    <td class="sorting_1">{{item.startData}}</td>
+                    <td class="sorting_1">
+                      <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs"
+                        title="">Delete</button>
+                      <button class="btn btn-primary btn-xs" type="button" data-original-title="btn btn-danger btn-xs"
+                        title="">Edit</button>
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+              <div class="d-flex justify-content-between p-2">
+                <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+                  <option [ngValue]="10">10 items per page</option>
+                  <option [ngValue]="25">25 items per page</option>
+                  <option [ngValue]="50">50 items per page</option>
+                  <option [ngValue]="10">100 items per page</option>
+                </select>
+                <ngb-pagination [collectionSize]="(total$ | async)!" [(page)]="service.page"
+                  [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

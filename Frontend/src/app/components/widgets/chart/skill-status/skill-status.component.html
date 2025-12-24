@@ -1,0 +1,24 @@
+<div class="card">
+   <div class="card-header">
+     <div class="row">
+       <div class="col-9">
+         <h5>Skill Status</h5>
+       </div>
+       <div class="col-3 text-end"><i class="text-muted" data-feather="trending-up"></i></div>
+     </div>
+   </div>
+   <div class="card-body">
+     <div class="chart-container">
+       <div id="circlechart">
+         <apx-chart [chart]="skillChart.chart"
+            [responsive]="skillChart.responsive"
+            [plotOptions]="skillChart.plotOptions"
+            [series]="skillChart.series"
+            [labels]="skillChart.labels"
+            [legend]="skillChart.legend"
+            [colors]="skillChart.colors">
+            </apx-chart>
+       </div>
+     </div>
+   </div>
+ </div>

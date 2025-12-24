@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header pb-0">
+    <h5>Alert With Icon inverse</h5><span>Use the <code>.inverse</code> class to quickly provide matching colored links
+      within any alert</span>
+  </div>
+  <div class="card-body">
+    @for (a of data; track a) {
+    <div class="alert alert-{{a.color}} inverse alert-dismissible fade show" role="alert">
+      <app-feather-icon [icon]=a.icon></app-feather-icon>
+      <p>Your time Over after <b>5</b> miniute</p>
+      <button class="btn-close" type="button" (click)="deleteMsg(a.id)"></button>
+    </div>
+    }
+  </div>
+</div>

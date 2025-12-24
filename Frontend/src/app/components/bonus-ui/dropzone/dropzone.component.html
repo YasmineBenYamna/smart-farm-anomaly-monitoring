@@ -1,0 +1,39 @@
+<app-breadcrumb [title]="'Dropzone'" [items]="['Bonus Ui']" [active_item]="'Dropzone'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-sm-12">
+         <div class="card">
+            <div class="card-header pb-0">
+               <h5>Single File Upload</h5>
+            </div>
+            <div class="card-body">
+               <dropzone body [config]="imageConfig" (error)="onUploadError($event)" (success)="onUploadSuccess($event)"
+                  [message]="text" class="custom-drop-zone custom-dropzone-1"></dropzone>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="card">
+            <div class="card-header pb-0">
+               <h5>Multi File Upload</h5>
+            </div>
+            <div class="card-body">
+               <dropzone [config]="imageConfig1" (error)="onUploadError1($event)" (success)="onUploadSuccess1($event)"
+                  [message]="text" class="custom-drop-zone custom-dropzone-1">
+               </dropzone>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-sm-12">
+      <div class="card">
+         <div class="card-header pb-0">
+            <h5>Default Style</h5>
+         </div>
+         <div class="card-body">
+            <dropzone [config]="imageConfig2" (error)="onUploadError2($event)" (success)="onUploadSuccess2($event)"
+               [message]="text" [className]="'custom-drop-zone'"></dropzone>
+         </div>
+      </div>
+   </div>
+</div>

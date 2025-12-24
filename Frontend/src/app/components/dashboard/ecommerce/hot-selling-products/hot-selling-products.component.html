@@ -1,0 +1,41 @@
+<div class="card hot-selling">
+  <div class="card-header card-no-border">
+    <div class="header-top">
+      <h5 class="m-0">Hot Selling Products</h5>
+      <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+        <div class="icon-box-show onhover-show-div">
+          <ul>
+            <li> <a>
+                Today</a></li>
+            <li> <a>
+                Yesterday</a></li>
+            <li> <a>
+                Tommorow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <div class="table-responsive">
+      <table class="table table-bordernone">
+        <tbody>
+          @for (item of HotSellingProducts; track item) {
+          <tr>
+            <td>
+              <div class="media"><img class="img-fluid me-3 b-r-5" src="{{item.productImg}}" alt="">
+                <div class="media-body"><a href="e-commerce/product-page">
+                    <h5>{{item.productName}}</h5>
+                  </a>
+                  <p>{{item.sales}}</p>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-light-theme-light font-theme-light">{{item.price}}</span></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

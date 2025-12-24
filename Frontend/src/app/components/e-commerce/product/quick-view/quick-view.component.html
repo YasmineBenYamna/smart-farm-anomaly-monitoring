@@ -1,0 +1,46 @@
+<div class="modal-header">
+  <div class="product-box row">
+    <div class="product-img col-lg-6"><img class="img-fluid" src="{{ productDetail?.img }}" alt="" /></div>
+    <div class="product-details col-lg-6 text-start">
+      <a [routerLink]="['/e-commerce/product-page']">
+        <h4>{{ productDetail?.name }}</h4>
+      </a>
+      <div class="product-price">
+        ${{ productDetail?.price }}
+        <del>${{ productDetail?.discountPrice }}</del>
+      </div>
+      <div class="product-view">
+        <h6 class="f-w-600">Product Details</h6>
+        <p class="mb-0">{{ productDetail?.discription }}</p>
+      </div>
+      <div class="product-size">
+        <ul>
+          <li>
+            <button class="btn" type="button">M</button>
+          </li>
+          <li>
+            <button class="btn" type="button">L</button>
+          </li>
+          <li>
+            <button class="btn" type="button">Xl</button>
+          </li>
+        </ul>
+      </div>
+      <div class="product-qnty">
+        <h6 class="f-w-600">Quantity</h6>
+        <div class="qty-box1">
+          <div class="input-group m-b-20">
+            <button class="btn btn-primary btn-square">
+              <i class="fa fa-minus btnGtr1" (click)="decrement()"></i>
+            </button>
+            <input class="touchspin1 text-center form-control" #qty name="quantity" type="text" value="{{ counter }}" />
+            <button class="btn btn-primary btn-square">
+              <i class="fa fa-plus btnLess1" (click)="increment()"></i>
+            </button>
+          </div>
+        </div>
+        <div class="addcart-btn"><a class="btn btn-primary me-3" [routerLink]="['/e-commerce/cart']">Add to Cart</a><a class="btn btn-primary" [routerLink]="['/e-commerce/product-page']">View Details</a></div>
+      </div>
+    </div>
+  </div>
+</div>

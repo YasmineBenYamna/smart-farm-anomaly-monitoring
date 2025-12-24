@@ -1,0 +1,44 @@
+<app-breadcrumb [title]="'Apply'" [items]="['Job Search']" [active_item]="'Apply'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row">
+     <div class="col-xl-3 xl-40 box-col-5">
+       <app-job-filter></app-job-filter>
+     </div>
+     <div class="col-xl-9 xl-60 box-col-7">
+      <div class="card">
+        <div class="job-search">
+          <div class="card-body pb-0">
+            <div class="media"><img class="img-40 img-fluid m-r-20" src="assets/images/job-search/1.jpg" alt="">
+              <div class="media-body">
+                <h5 class="f-w-700 mb-0"><a href="javascript:void(0)">UI Designer                                     </a></h5>
+                <p>Zeta Telecom & Technologies , NY </p>
+                <ul class="rating">
+                  <li> <i class="fa fa-star font-warning"></i></li>
+                  <li> <i class="fa fa-star font-warning"></i></li>
+                  <li> <i class="fa fa-star font-warning"></i></li>
+                  <li> <i class="fa fa-star font-warning"></i></li>
+                  <li> <i class="fa fa-star font-warning"></i></li>
+                </ul>
+                <button class="btn btn-primary job-apply-btn" type="button"><span><i class="fa fa-check text-white"></i></span> Save this job</button>
+              </div>
+            </div>
+            <div class="job-description">
+              <h6 class="mb-0">Personal Details </h6>
+              <app-personal-details></app-personal-details>
+              <h6 class="mb-0">Your Education</h6>
+              <app-education></app-education>
+              <h6 class="mb-0">Your Experience</h6>
+              <app-experience></app-experience>
+              <h6 class="mb-0">Upload Your Files</h6>
+              <app-upload-files></app-upload-files>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <input class="btn btn-light ms-2" type="reset" value="Cancel">
+          </div>
+        </div>
+      </div>
+     </div>
+   </div>
+ </div>

@@ -1,0 +1,50 @@
+<div class="cart-box">
+  <svg-icon src="assets/svgIcon/cart.svg"></svg-icon>  
+  <span class="badge rounded-pill badge-primary">2</span>
+ </div>
+ <div class="cart-dropdown onhover-show-div">
+   <div class="dropdown-title">             
+     <h3>Cart             </h3><a class="f-right" href="e-commerce/cart"> <i data-feather="shopping-bag"></i></a>
+   </div>
+   <ul class="custom-scrollbar">
+     <li>
+       <div class="media"><img class="img-fluid b-r-5 me-3 img-50" src="assets/images/banner-1.jpg" alt="">
+         <div class="media-body">
+           <h5> <a href="e-commerce/product">White shirt with jacket</a></h5>
+           <p class="f-w-700">$500</p>
+           <div class="cart-quantity"><span class="plus"><i class="fa fa-plus"></i></span>
+             <input class="count" type="text" name="qty" value="3"><span class="minus"><i class="fa fa-minus"></i></span>
+           </div>
+         </div>
+         <div class="close-circle"><a href="javascript:void(0)"><app-feather-icon class="me-1" [icon]="'edit'"></app-feather-icon></a><a href="javascript:void(0)"><app-feather-icon [icon]="'trash-2'"></app-feather-icon></a></div>
+       </div>
+     </li>
+     <li>
+       <div class="media"><img class="img-fluid b-r-5 me-3 img-50" src="assets/images/product-4.png" alt="">
+         <div class="media-body">
+           <h5> <a href="e-commerce/product">Brown jacket.</a></h5>
+           <p class="f-w-700">$500</p>
+           <div class="cart-quantity"> <span class="plus"><i class="fa fa-plus"></i></span>
+             <input class="count" type="text" name="qty" value="3"><span class="minus"><i class="fa fa-minus"></i></span>
+           </div>
+         </div>
+         <div class="close-circle"><a href="javascript:void(0)"><app-feather-icon class="me-1" [icon]="'edit'"></app-feather-icon></a><a href="javascript:void(0)"><app-feather-icon [icon]="'trash-2'"></app-feather-icon></a></div>
+       </div>
+     </li>
+     <li>
+       <div class="media"><img class="img-fluid b-r-5 me-3 img-50" src="assets/images/product-6.jpg" alt="">
+         <div class="media-body">
+           <h5> <a href="e-commerce/product">Nike Black shoes !</a></h5>
+           <p class="f-w-700">$500</p>
+           <div class="cart-quantity"> <span class="plus"><i class="fa fa-plus"></i></span>
+             <input class="count" type="text" name="qty" value="3"><span class="minus"><i class="fa fa-minus"></i></span>
+           </div>
+         </div>
+         <div class="close-circle"><a href="javascript:void(0)"><app-feather-icon class="me-1" [icon]="'edit'"></app-feather-icon></a><a href="javascript:void(0)"><app-feather-icon [icon]="'trash-2'"></app-feather-icon></a></div>
+       </div>
+     </li>
+     <li class="order-total">
+       <h4 class="mb-0 f-w-700">Total : <span>$100.00</span></h4><a href="e-commerce/checkout" class="btn btn-primary view-checkout">Checkout</a>
+     </li>
+   </ul>
+ </div>

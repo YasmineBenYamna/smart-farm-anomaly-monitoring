@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Contextual classes</h5><span>Use contextual classes to color table rows or individual cells. you may use Classes
+      <code>table-primary</code>,<code>table-secondary</code>,<code>table-success</code>,<code>table-info</code>,<code>table-warning</code>,<code>table-danger</code>,<code>table-light</code>,<code>table-active</code>
+      in<code>tr</code></span>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Class</th>
+          <th scope="col">Heading</th>
+          <th scope="col">Heading</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of contextual; track item) {
+        <tr class="table-{{item}}">
+          <td scope="row">Primary</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

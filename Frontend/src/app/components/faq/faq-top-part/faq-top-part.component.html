@@ -1,0 +1,17 @@
+<div class="row">
+  @for (faq of FaqTopPart; track faq) {
+  <div class="col-xl-4 {{faq.colClass}}">
+    <div class="card bg-primary">
+      <div class="card-body">
+        <div class="media faq-widgets">
+          <div class="media-body">
+            <h4>{{faq.title}}</h4>
+            <p>{{faq.dace}}</p>
+          </div>
+          <app-feather-icon [icon]=faq.icon></app-feather-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

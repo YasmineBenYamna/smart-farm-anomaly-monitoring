@@ -1,0 +1,153 @@
+<app-breadcrumb [title]="'Buttons'" [items]="['Apps']" [active_item]="'Buttons'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      @for (button of btns; track button) {
+      <div class="card" id="default">
+        <div class="card-header pb-0">
+          <h5>{{button.buttonTitle}}</h5><span [innerHTML]="button.buttonSubTitle"></span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of button.buttons; track btn) {
+            <button class="btn {{button.buttonTypeClass}} btn-{{btn}}" type="button">{{btn | titlecase}}
+              Button</button>
+            }
+          </div>
+        </div>
+      </div>
+      }
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Raised buttons</h5><span>Add <code>.btn-pill</code> and <code>.btn-air-*</code> class for raised
+            button</span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of btns2; track btn) {
+            <button class="btn btn-pill btn-{{btn.btnClass}} btn-air-{{btn.btnClass}}"
+              type="button">{{btn.buttonName}}</button>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>button group</h5>
+        </div>
+        <div class="card-body btn-group-showcase">
+          <div class="row">
+            @for (btn of groupBtn; track btn) {
+            <div class="col-xl-4 box-col-6 col-sm-12">
+              @for (b of btn.btnClass; track b) {
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button class="btn btn-{{b}}" type="button">Left</button>
+                <button class="btn btn-{{b}}" type="button">Middle</button>
+                <button class="btn btn-{{b}}" type="button">Right</button>
+              </div>
+              }
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="card" id="large-btn">
+        <div class="card-header pb-0">
+          <h5>Large buttons</h5><span>Add <code>.btn-lg</code> class for large size buttons</span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of btns2; track btn) {
+            <button class="btn btn-{{btn.btnClass}} btn-lg" type="button">{{btn.buttonName}}</button>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="card" id="small-btn">
+        <div class="card-header pb-0">
+          <h5>Small buttons</h5><span>Add <code>.btn-sm</code> class for small size buttons</span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of btns2; track btn) {
+            <button class="btn btn-{{btn.btnClass}} btn-sm" type="button">{{btn.buttonName}}</button>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="card" id="ex-small-btn">
+        <div class="card-header pb-0">
+          <h5>Extra Small buttons</h5><span>Add <code>.btn-xs</code> class for extra small size buttons</span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of btns2; track btn) {
+            <button class="btn btn-{{btn.btnClass}} btn-xs" type="button">{{btn.buttonName}}</button>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="card" id="active-btn">
+        <div class="card-header pb-0">
+          <h5>Active Buttons</h5><span>Add <code>.active</code> class for active state</span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of btns2; track btn) {
+            <button class="btn btn-{{btn.btnClass}} active" type="button">Active</button>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="card" id="disabled-btn">
+        <div class="card-header pb-0">
+          <h5>Disabled buttons</h5><span>Add <code>.disabled</code> class or <code>disabled="disabled"</code> attribute
+            for disabled button</span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of btns2; track btn) {
+            <button class="btn btn-{{btn.btnClass}} disabled" type="button">Disabled</button>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="card" id="outline-button">
+        <div class="card-header pb-0">
+          <h5>outline buttons</h5><span>Add <code>.btn-outline-*</code> class for border button</span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of btns2; track btn) {
+            <button class="btn btn-outline-{{btn.btnClass}}" type="button">{{btn.buttonName}}</button>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="card" id="outline-bold-button">
+        <div class="card-header pb-0">
+          <h5>bold Border outline buttons</h5><span>Add <code>.btn-outline-*-2x</code> class for bold outline</span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of btns2; track btn) {
+            <button class="btn btn-outline-{{btn.btnClass}}-2x" type="button">{{btn.buttonName}}</button>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="card" id="gradiant">
+        <div class="card-header pb-0">
+          <h5>Gradien buttons</h5><span>Add <code>.btn-*-gradien</code> class for gradien button</span>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            @for (btn of btns2; track btn) {
+            <button class="btn btn-{{btn.btnClass}}-gradien" type="button">{{btn.buttonName}}</button>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

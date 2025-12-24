@@ -1,0 +1,27 @@
+<div class="card">
+   <div class="card-header pb-0">
+     <div class="row">
+       <div class="col-9">
+         <h5>Finance</h5>
+       </div>
+       <div class="col-3 text-end"><i class="text-muted" data-feather="navigation"></i></div>
+     </div>
+   </div>
+   <div class="card-body">
+     <div class="chart-container">
+       <div id="columnchart">
+         <apx-chart 
+            [chart]="finance.chart"
+            [dataLabels]="finance.dataLabels"
+            [stroke]="finance.stroke"
+            [series]="finance.series"
+            [title]="finance.title"
+            [subtitle]="finance.subtitle"
+            [xaxis]="finance.xaxis"
+            [yaxis]="finance.yaxis"
+            [colors]="finance.colors">
+            </apx-chart>
+       </div>
+     </div>
+   </div>
+ </div>

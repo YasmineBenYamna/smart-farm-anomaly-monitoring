@@ -1,0 +1,37 @@
+<div class="card revenue-category">
+   <div class="card-header card-no-border">
+     <div class="media">
+       <div class="media-body"> 
+         <h5 class="mb-0">Revenue by Category</h5>
+       </div>
+       <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+         <div class="icon-box-show onhover-show-div">
+           <ul> 
+             <li> <a>
+                 Done</a></li>
+             <li> <a>
+                 Pending</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="card-body">
+     <div class="donut-inner">
+       <h5>16,349</h5>
+       <h6>2,174 in pending</h6>
+     </div>
+     <div id="revenue-chart">
+     <apx-chart
+     [legend]="pie.legend" 
+     [series]="pie.series"
+     [chart]="pie.chart"
+     [labels]="pie.labels"
+     [dataLabels]="pie.dataLabels"
+     [states]="pie.states"
+     [stroke]="pie.stroke"
+       [colors]="pie.colors"
+       [responsive]="pie.responsive"></apx-chart>
+     </div>
+   </div>
+ </div>

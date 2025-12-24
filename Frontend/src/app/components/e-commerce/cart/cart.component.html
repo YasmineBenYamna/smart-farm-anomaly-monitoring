@@ -1,0 +1,76 @@
+<app-breadcrumb [title]="'Cart'" [items]="['E-Commerce']" [active_item]="'Cart'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Cart</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="order-history table-responsive wishlist">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of cartItem; track item) {
+                  <tr>
+                    <td><img class="img-fluid img-40" src="{{item.productImg}}" alt="#"></td>
+                    <td>
+                      <div class="product-name"><a href="#">
+                          <h6>{{item.productName}}</h6>
+                        </a></div>
+                    </td>
+                    <td>${{item.price}}</td>
+                    <td>
+                      <fieldset class="qty-box">
+                        <div class="input-group">
+                          <button class="btn btn-primary btn-square">
+                            <i class="fa fa-minus btnGtr1"></i>
+                          </button>
+                          <input class="touchspin1 text-center form-control" #qty name="quantity" type="text" value="1">
+                          <button class="btn btn-primary btn-square">
+                            <i class="fa fa-plus btnLess1"></i>
+                          </button>
+                        </div>
+                      </fieldset>
+                    </td>
+                    <td><i data-feather="x-circle"></i></td>
+                    <td>${{item.total}}</td>
+                  </tr>
+                  }
+                  <tr>
+                    <td colspan="4">
+                      <div class="input-group">
+                        <input class="form-control me-2" type="text" placeholder="Enter coupan code"><a
+                          class="btn btn-primary" href="#">Apply</a>
+                      </div>
+                    </td>
+                    <td class="total-amount">
+                      <h6 class="m-0 text-end"><span class="f-w-600">Total Price :</span></h6>
+                    </td>
+                    <td><span>$6935.00 </span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-end" colspan="5"><a class="btn btn-secondary cart-btn-transform"
+                        href="e-commerce/product">Continue shopping</a></td>
+                    <td><a class="btn btn-success cart-btn-transform" [routerLink]="['/e-commerce/checkout']"
+                        href="e-commerce/checkout">Check out</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

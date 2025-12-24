@@ -1,0 +1,11 @@
+<app-breadcrumb [title]="'MDE Editors'" [items]="['Apps']" [active_item]="'MDE Editors'"></app-breadcrumb>
+<div class="col-sm-12">
+   <div class="card">
+     <div class="card-header pb-0">
+       <h5>KolKov Editor</h5>
+     </div>
+     <div class="card-body">
+      <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+     </div>
+   </div>
+  </div>

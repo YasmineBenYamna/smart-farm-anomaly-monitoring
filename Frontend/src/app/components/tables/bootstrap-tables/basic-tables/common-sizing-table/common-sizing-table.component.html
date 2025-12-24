@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header">
+    <h5>{{table.title}}</h5><span [innerHTML]="table.sace"></span>
+  </div>
+  <div class="table-responsive">
+    <table class="table {{table.tableCalss}}">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Employee Name</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Hours</th>
+          <th>Performance</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of table.tableData; track item) {
+        <tr>
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.Name}}</td>
+          <td>{{item.Date}}</td>
+          <td class="{{item.statusClass}}">{{item.Status}}</td>
+          <td>{{item.hours}}</td>
+          <td>{{item.performance}}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

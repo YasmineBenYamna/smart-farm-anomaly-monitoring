@@ -1,0 +1,45 @@
+<div class="card o-hidden">
+   <div class="card-header pb-0">
+     <div class="media">
+       <div class="media-body">
+         <h5>Marketing Expenses</h5>
+       </div>
+       <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+         <div class="icon-box-show onhover-show-div">
+           <ul> 
+             <li> <a>
+                  Done</a></li>
+             <li> <a>
+                  Pending</a></li>
+             <li> <a>
+                  Rejected</a></li>
+             <li> <a>In Progress</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="bar-chart-widget">
+     <div class="bottom-content card-body">
+       <div class="row">
+         <div class="col-12">
+           <div id="chart-widget4">
+            <apx-chart [chart]="columnchart.chart"
+            [series]="columnchart.series"
+            [legend]="columnchart.legend"
+            [chart]="columnchart.chart"
+            [plotOptions]="columnchart.plotOptions"
+            [dataLabels]="columnchart.dataLabels"
+            [stroke]="columnchart.stroke"
+            [grid]="columnchart.grid"
+            [xaxis]="columnchart.xaxis"
+            [yaxis]="columnchart.yaxis"
+            [fill]="columnchart.fill"
+            [tooltip]="columnchart.tooltip">
+            </apx-chart>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

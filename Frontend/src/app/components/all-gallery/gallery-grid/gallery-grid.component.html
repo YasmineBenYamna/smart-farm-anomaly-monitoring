@@ -1,0 +1,22 @@
+<app-breadcrumb [title]="'Gallery'" [items]="['Gallery']" [active_item]="'Gallery'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>IMAGE GALLERY</h5>
+        </div>
+        <div class="my-gallery card-body" itemscope="" gallerize>
+          <div class="row gallery">
+            @for (img of imageData; track img) {
+            <figure class="col-xl-3 col-sm-6" itemprop="associatedMedia">
+              <a itemprop="contentUrl">
+                <img [src]="img.srcUrl" class="img-fluid" />
+              </a>
+            </figure>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

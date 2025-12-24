@@ -1,0 +1,27 @@
+<div class="card pb-0 invoice-overviwe">                
+   <div class="card-header card-no-border">
+     <div class="header-top">
+       <h5 class="m-0">Invoice Overview</h5>
+       <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+         <div class="icon-box-show onhover-show-div">
+           <ul> 
+             <li> <a>
+                  Today</a></li>
+             <li> <a>
+                  Yesterday</a></li>
+             <li> <a>
+                  Tommorow</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="card-body pt-0">
+     <div id="invoice-overviwe-chart">
+       <apx-chart [series]="column.series" [chart]="column.chart" [dataLabels]="column.dataLabels"
+       [plotOptions]="column.plotOptions" [yaxis]="column.yaxis" [legend]="column.legend" [fill]="column.fill"
+       [stroke]="column.stroke" [tooltip]="column.tooltip" [xaxis]="column.xaxis" [colors]="column.colors" [states]="column.states">
+     </apx-chart>
+     </div>
+   </div>
+ </div>

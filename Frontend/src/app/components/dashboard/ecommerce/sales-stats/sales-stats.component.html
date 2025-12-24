@@ -1,0 +1,97 @@
+<div class="card sales-state">
+  <div class="row m-0">
+    <div class="col-12 p-0">
+      <div class="card bg-primary">
+        <div class="card-header card-no-border bg-primary">
+          <div class="media media-dashboard">
+            <div class="media-body">
+              <h5 class="mb-0 text-light">Sales Stats</h5>
+            </div>
+            <div class="icon-box">
+              <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+            </div>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <div id="sales-state-chart">
+            <div id="chart-widget1">
+              <apx-chart [chart]="sale.chart" [dataLabels]="sale.dataLabels" [stroke]="sale.stroke" [xaxis]="sale.xaxis" [yaxis]="sale.yaxis" [grid]="sale.grid" [fill]="sale.fill" [colors]="sale.colors" [series]="sale.series" [tooltip]="sale.tooltip"> </apx-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 p-0">
+      <div class="sales-small-chart">
+        <div class="card-body p-0 m-auto">
+          <div class="sales-small sales-small-1">
+            <apx-chart
+              [chart]="smallColumnChart1.chart"
+              [plotOptions]="smallColumnChart1.plotOptions"
+              [dataLabels]="smallColumnChart1.dataLabels"
+              [stroke]="smallColumnChart1.stroke"
+              [grid]="smallColumnChart1.grid"
+              [series]="smallColumnChart1.series"
+              [xaxis]="smallColumnChart1.xaxis"
+              [yaxis]="smallColumnChart1.yaxis"
+              [fill]="smallColumnChart1.fill"
+              [tooltip]="smallColumnChart1.tooltip"
+              [colors]="smallColumnChart1.colors"
+            >
+            </apx-chart>
+          </div>
+          <h6>300</h6>
+          <span>Watch Sale</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 p-0">
+      <div class="sales-small-chart">
+        <div class="card-body p-0 m-auto">
+          <div class="sales-small sales-small-2">
+            <apx-chart
+              [chart]="smallColumnChart2.chart"
+              [plotOptions]="smallColumnChart2.plotOptions"
+              [dataLabels]="smallColumnChart2.dataLabels"
+              [stroke]="smallColumnChart2.stroke"
+              [grid]="smallColumnChart2.grid"
+              [series]="smallColumnChart2.series"
+              [xaxis]="smallColumnChart2.xaxis"
+              [yaxis]="smallColumnChart2.yaxis"
+              [fill]="smallColumnChart2.fill"
+              [tooltip]="smallColumnChart2.tooltip"
+              [colors]="smallColumnChart2.colors"
+            >
+            </apx-chart>
+          </div>
+          <h6>1120</h6>
+          <span>Phone Sale</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 p-0">
+      <div class="sales-small-chart">
+        <div class="card-body p-0 m-auto">
+          <div class="sales-small sales-small-3">
+            <apx-chart
+            [chart]="smallColumnChart3.chart"
+            [plotOptions]="smallColumnChart3.plotOptions"
+            [dataLabels]="smallColumnChart3.dataLabels"
+            [stroke]="smallColumnChart3.stroke"
+            [grid]="smallColumnChart3.grid"
+            [series]="smallColumnChart3.series"
+            [xaxis]="smallColumnChart3.xaxis"
+            [yaxis]="smallColumnChart3.yaxis"
+            [fill]="smallColumnChart3.fill"
+            [tooltip]="smallColumnChart3.tooltip"
+            [colors]="smallColumnChart3.colors"
+          >
+          </apx-chart>
+          </div>
+          <h6>530</h6>
+          <span>Tablet Sale </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

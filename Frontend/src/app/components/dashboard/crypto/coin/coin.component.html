@@ -1,0 +1,24 @@
+<div class="card crypto-chart overflow-hidden">
+  <div class="card-header card-no-border">
+    <div class="media">
+      <div class="media-body">
+        <div class="coin-logo-img bg-light-{{ data.iconBg }}">
+          <svg-icon src="assets/svgIcon/{{ data.icon }}.svg"></svg-icon>
+        </div>
+        <h5 class="{{ data.nameColor }}">{{ data.coinName }}</h5>
+        <span>{{ data.subName }}</span>
+      </div>
+      <div class="media-end">
+        <h6>{{ data.coinPrice }}</h6>
+        <span class="badge {{ data.classColor }}"><i data-feather="arrow-up"> </i>{{ data.percentage }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="card-body p-0">
+    <div class="crypto-dashborad-chart">
+      <div id="bitcoin-chart">
+        <apx-chart [series]="data.series" [chart]="data.chart" [dataLabels]="data.dataLabels" [stroke]="data.stroke" [xaxis]="data.xaxis" [tooltip]="data.tooltip" [yaxis]="data.yaxis" [grid]="data.grid" [legend]="data.legend" [colors]="data.colors" [fill]="data.fill"></apx-chart>
+      </div>
+    </div>
+  </div>
+</div>

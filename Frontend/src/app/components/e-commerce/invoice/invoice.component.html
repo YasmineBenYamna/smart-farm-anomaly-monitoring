@@ -1,0 +1,75 @@
+<app-breadcrumb [title]="'Invoice'" [items]="['E - Commerce']" [active_item]="'Invoice'"></app-breadcrumb>
+<div class="container">
+   <div class="row">
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-body">
+           <div class="invoice">
+             <div id="print-section">
+               <div>
+                 <div class="row">
+                   <div class="col-sm-6">
+                     <div class="media">
+                       <div class="media-left"><img class="media-object img-60" src="assets/images/logo-icon.png" alt=""></div>
+                       <div class="media-body m-l-20 text-start">
+                         <h4 class="media-heading">Zeta</h4>
+                         <p>hello&#64;Zeta.in<br><span>289-335-6503</span></p>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="col-sm-6">
+                     <div class="text-md-end text-xs-center">
+                       <h3>Invoice #<span class="counter">2069</span></h3>
+                       <p>Issued: May<span> 27, 2022</span><br>Payment Due: June <span>27, 2022</span></p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <hr>
+               <div class="row invo-profile">
+                 <div class="col-xl-4">
+                   <div class="media">
+                     <div class="media-left"><img class="media-object rounded-circle img-60" src="assets/images/user/1.jpg" alt=""></div>
+                     <div class="media-body m-l-20">
+                       <h4 class="media-heading">Johan Deo</h4>
+                       <p>JohanDeo&#64;gmail.com<br><span>945-684-7956</span></p>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-xl-8">
+                   <div class="text-xl-end" id="project">
+                     <h6>Project Description</h6>
+                     <p>You're only as good as your last collection, which is an enormous pressure. Jeans represent democracy in fashion. Fashion is about dressing according to what's fashionable.</p>
+                   </div>
+                 </div>
+               </div>
+               <div>
+                 <div class="table-responsive invoice-table" id="table">
+                  <app-invoice-data-table></app-invoice-data-table>
+                 </div>
+                 <div class="row">
+                   <div class="col-md-8">
+                     <div>
+                       <p class="legal"><strong>Thank you for your business!</strong>  Payment is expected within 31 days; please process this invoice within that time. There will be a 5% interest charge per month on late invoices.</p>
+                     </div>
+                   </div>
+                   <div class="col-md-4">
+                     <form class="text-end">
+                       <input type="image" src="assets/images/other-images/paypal.png" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                     </form>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="col-sm-12 text-center mt-3">
+                <button class="btn btn btn-primary me-2"
+                [printStyle]="{h1 : {'color': 'red'}, h2 : {'border': 'solid 1px'}}" printSectionId="print-section"
+                ngxPrint>print</button>
+               <button class="btn btn-secondary" type="button">Cancel</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

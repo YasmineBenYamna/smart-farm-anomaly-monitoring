@@ -1,0 +1,46 @@
+<div class="card user-status">
+  <div class="card-header pb-0">
+    <div class="media">
+      <div class="media-body">
+        <h5>Product cart</h5>
+      </div>
+      <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+        <div class="icon-box-show onhover-show-div">
+          <ul>
+            <li> <a>
+                Done</a></li>
+            <li> <a>
+                Pending</a></li>
+            <li> <a>
+                Rejected</a></li>
+            <li> <a>In Progress</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive mb-0">
+      <table class="table table-bordernone">
+        <thead>
+          <tr>
+            <th scope="col">Details</th>
+            <th scope="col">Qty.</th>
+            <th scope="col">Price</th>
+            <th class="text-end" scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (data of productCart; track data) {
+          <tr>
+            <td>{{data.details}}</td>
+            <td class="digits">{{data.qty}}</td>
+            <td class="digits font-primary">{{data.price}}</td>
+            <td class="text-end"><span class="badge badge-light-{{data.statusBgColor}}">{{data.status}}</span></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

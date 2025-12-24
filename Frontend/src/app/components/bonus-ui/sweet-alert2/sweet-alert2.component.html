@@ -1,0 +1,51 @@
+<app-breadcrumb [title]="'Sweet Alert'" [items]="['Bonus Ui']" [active_item]="'sweet Alert'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row">
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Basic Examples</h5>
+         </div>
+         <div class="card-body">
+           <div class=" btn-showcase">
+              <button class="btn btn-primary sweet-1" type="button" (click)="basicAlert()">Basic</button>
+              <button class="btn btn-primary sweet-2" type="button" (click)="withTitle()">With Title alert</button>
+              <button class="btn btn-success sweet-3" type="button" (click)="successAlert()">Success alert</button>
+              <button class="btn btn-info sweet-4" type="button" (click)="info()">Info alert</button>
+              <button class="btn btn-warning sweet-5" type="button" (click)="withCancelled()">Warning alert</button>
+            </div>
+         </div>
+       </div>
+     </div>
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Advanced State</h5>
+         </div>
+         <div class="card-body">
+           <div class="btn-showcase">
+              <button class="btn btn-success sweet-12" type="button" (click)="dialogWithThree()" >Dialog With Three</button>
+              <button class="btn btn-danger sweet-11" type="button" (click)="customAnimation()">Message With Auto Close Timer</button>
+              <button class="btn btn-info sweet-13" type="button" (click)="dialog()">Positioned Dialog</button>
+              <button class="btn btn-warning sweet-10" type="button" (click)="warning()">Warning</button>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Alert State</h5>
+         </div>
+         <div class="card-body">
+           <div class="btn-showcase">
+              <button class="btn btn-success sweet-8" type="button" (click)="success()">Success</button>
+              <button class="btn btn-danger sweet-7" type="button"  (click)="danger()">Danger</button>
+              <button class="btn btn-info sweet-9" type="button" (click)="info2()">Information</button>
+              <button class="btn btn-warning sweet-6" type="button" (click)="warning2()">Warning</button>
+            </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

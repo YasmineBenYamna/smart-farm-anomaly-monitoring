@@ -1,0 +1,37 @@
+<div class="card">
+   <div class="card-header">
+     <h5 class="p-0">
+       <button class="btn btn-link ps-0" aria-expanded="true" aria-controls="collapseicon4" (click)="isProfile = !isProfile" [attr.aria-expanded]="!isProfile">Latest Photos</button>
+     </h5>
+   </div>
+   <div class="collapse show" id="collapseicon4" [ngbCollapse]="isProfile" data-parent="#accordion" aria-labelledby="collapseicon4">
+     <div class="card-body photos filter-cards-view">
+       <ul>
+         <li>
+           <div class="latest-post"><img class="img-fluid" alt="" src="assets/images/social-app/post-1.png"></div>
+         </li>
+         <li>
+           <div class="latest-post"><img class="img-fluid" alt="" src="assets/images/social-app/post-2.png"></div>
+         </li>
+         <li>
+           <div class="latest-post"><img class="img-fluid" alt="" src="assets/images/social-app/post-3.png"></div>
+         </li>
+         <li>
+           <div class="latest-post"><img class="img-fluid" alt="" src="assets/images/social-app/post-4.png"></div>
+         </li>
+         <li>
+           <div class="latest-post"><img class="img-fluid" alt="" src="assets/images/social-app/post-5.png"></div>
+         </li>
+         <li>
+           <div class="latest-post"><img class="img-fluid" alt="" src="assets/images/social-app/post-6.png"></div>
+         </li>
+         <li>
+           <div class="latest-post"><img class="img-fluid" alt="" src="assets/images/social-app/post-7.png"></div>
+         </li>
+         <li>
+           <div class="latest-post"><img class="img-fluid" alt="" src="assets/images/social-app/post-8.png"></div>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </div>

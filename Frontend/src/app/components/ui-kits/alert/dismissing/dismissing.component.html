@@ -1,0 +1,14 @@
+<div class="card height-equal">
+  <div class="card-header pb-0">
+    <h5>Dismissing</h5><span>To animate alerts when dismissing them, be sure to add the <code>.fade </code>and
+      <code>.show </code>classes.</span>
+  </div>
+  <div class="card-body">
+    @for (a of data; track a) {
+    <div class="alert alert-{{a.color}} dark alert-dismissible fade show" role="alert"><strong>Holy ! </strong> You can
+      check in on some of those fields below.
+      <button class="btn-close" type="button" (click)="deleteMsg(a.id)"></button>
+    </div>
+    }
+  </div>
+</div>

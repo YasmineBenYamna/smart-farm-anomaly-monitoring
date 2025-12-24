@@ -1,0 +1,66 @@
+<div class="card ongoing-project recent-orders">
+  <div class="card-header card-no-border">
+    <div class="media media-dashboard">
+      <div class="media-body">
+        <h5 class="mb-0">Recent Orders</h5>
+      </div>
+      <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+        <div class="icon-box-show onhover-show-div">
+          <ul>
+            <li> <a>
+                Done</a></li>
+            <li> <a>
+                Pending</a></li>
+            <li> <a>
+                Rejected</a></li>
+            <li> <a>In Progress</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <div class="table-responsive custom-scrollbar">
+      <table class="table table-bordernone">
+        <thead>
+          <tr>
+            <th> <span>Product Name</span></th>
+            <th> <span>Customer</span></th>
+            <th> <span>Price </span></th>
+            <th> <span>Quantity</span></th>
+            <th> <span>Status</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (data of productData; track data) {
+          <tr>
+            <td>
+              <div class="media">
+                <div class="square-box me-2"><img class="img-fluid b-r-5" src="{{data.productImg}}"
+                    alt="{{data.productName}}"></div>
+                <div class="media-body ps-2">
+                  <div class="avatar-details"><a href="e-commerce/product-page">
+                      <h6>{{data.productName}}</h6>
+                    </a><span>{{data.delivery}}</span></div>
+                </div>
+              </div>
+            </td>
+            <td class="img-content-box">
+              <h6>{{data.customer}}</h6><span>{{data.location}}</span>
+            </td>
+            <td>
+              <h6>{{data.price}}</h6><span>{{data.priceType}}</span>
+            </td>
+            <td>
+              <h6>{{data.quantity}}</h6>
+            </td>
+            <td>
+              <div class="badge badge-light-{{data.tagBg}}">{{data.Status}}</div>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

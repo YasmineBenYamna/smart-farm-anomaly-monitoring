@@ -1,0 +1,12 @@
+<div class="card">
+   <div class="card-header pb-0">
+      <h5>{{alert.title}}</h5><span [innerHTML]="alert.dace"></span>
+   </div>
+   <div class="card-body">
+      @for (c of alert.colorsClass; track c) {
+      <div class="alert {{c.class}}" role="alert">
+         <p>This is a {{c.name}} alert—check it out!</p>
+      </div>
+      }
+   </div>
+</div>

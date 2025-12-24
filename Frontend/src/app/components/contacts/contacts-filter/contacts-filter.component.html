@@ -1,0 +1,34 @@
+<div class="email-sidebar"><a class="btn btn-primary email-aside-toggle" (click)="openMenu()">contact filter </a>
+   <div class="email-left-aside" [class.open]="open">
+     <div class="card">
+       <div class="card-body">
+         <div class="email-app-sidebar left-bookmark">
+           <div class="media">
+             <div class="media-size-email"><img class="me-3 rounded-circle" src="assets/images/user/user.png" alt=""></div>
+             <div class="media-body"><a href="users/users-profile">
+                 <h6 class="f-w-700">MARK JENCO</h6></a>
+               <p>Markjecno&#64;gmail.com</p>
+             </div>
+           </div>
+           <ul class="nav main-menu contact-options" role="tablist">
+             <li class="nav-item">
+               <button class="btn-primary badge-light btn-block btn-mail w-100" type="button" (click)="openNewContact()"><i class="me-2" data-feather="users" ></i> New Contacts</button>
+             </li>
+             <li class="nav-item"><span class="main-title"> Views</span></li>
+             <li><a id="pills-personal-tab"><span class="title"> Personal</span></a></li>
+             <li>
+               <button class="btn btn-category" type="button" ><span class="title"> + Add Category</span></button>
+             </li>
+             <li><a class="show" role="tab"><span class="title"> Organization</span></a></li>
+             <li><a><span class="title">Follow up</span></a></li>
+             <li><a><span class="title">Favorites</span></a></li>
+             <li><a><span class="title">Ideas</span></a></li>
+             <li><a><span class="title">Important</span></a></li>
+             <li><a><span class="title">Business</span></a></li>
+             <li><a><span class="title">Holidays</span></a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

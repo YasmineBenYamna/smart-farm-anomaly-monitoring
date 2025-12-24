@@ -1,0 +1,29 @@
+<div class="card">
+   <div class="card-header">
+      <h5 class="p-0">
+         <button class="btn btn-link ps-0" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample">Mutual Friends</button>
+      </h5>
+   </div>
+   <div class="collapse show" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+      <div class="card-body social-status filter-cards-view">
+         <form>
+            <div class="form-group m-0">
+               <input class="form-control-social" type="search" placeholder="Search Contacts..">
+            </div>
+         </form>
+         @for (friend of mutualFriend; track friend) {
+         <div class="media">
+            <img class="img-50 rounded-circle m-r-15" src="{{friend.profile}}" alt="">
+            <div class="social-status social-{{friend.status}}"></div>
+            <div class="media-body">
+               <a href="users/users-profile">
+                  <span class="f-w-600 d-block">{{friend.name}}</span>
+               </a>
+               <span class="d-block">{{friend.mail}}</span>
+            </div>
+         </div>
+         }
+      </div>
+   </div>
+</div>

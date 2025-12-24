@@ -1,0 +1,51 @@
+<div class="job-search">
+  <div class="card-body">
+    <div class="media"><img class="img-40 img-fluid m-r-20" src="assets/images/job-search/1.jpg" alt="">
+      <div class="media-body">
+        <h6 class="f-w-600"><a href="javascript:void(0)">Product Designer (UI/UX Designer) </a></h6>
+        <p>Viho - United States</p>
+        <ul class="rating">
+          <li><i class="fa fa-star font-warning"></i></li>
+          <li><i class="fa fa-star font-warning"></i></li>
+          <li><i class="fa fa-star font-warning"></i></li>
+          <li><i class="fa fa-star font-warning"></i></li>
+          <li><i class="fa fa-star font-warning"> </i></li>
+        </ul><a class="btn btn-primary btn-sm job-apply-btn" href="job-search/apply">Apply for this job</a>
+      </div>
+    </div>
+    @for (d of description; track d) {
+    <div class="job-description">
+      <h6>Job Description</h6>
+      <p class="text-start">{{d.desc}}</p>
+    </div>
+    }
+    <div class="job-description">
+      <h6>Qualifications </h6>
+      <ul>
+        @for (p of qualifications; track p) {
+        <li>{{p.point}}</li>
+        }
+      </ul>
+    </div>
+    <div class="job-description">
+      <h6>Agency experience</h6>
+      <ul>
+        @for (p of agencyExperience; track p) {
+        <li>{{p.point}}</li>
+        }
+      </ul>
+    </div>
+    <div class="job-description">
+      <h6>Perks</h6>
+      <ul>
+        @for (p of perks; track p) {
+        <li>{{p.point}}</li>
+        }
+      </ul>
+    </div>
+    <div class="job-description">
+      <button class="btn btn-primary" type="button"><span><i class="fa fa-check"></i></span> Save this job</button>
+      <button class="btn btn-primary ms-2" type="button"><span><i class="fa fa-share-alt"></i></span> Share</button>
+    </div>
+  </div>
+</div>

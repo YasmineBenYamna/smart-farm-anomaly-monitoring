@@ -1,0 +1,55 @@
+<div class="card trading-activities ongoing-project">
+  <div class="card-header card-no-border">
+    <div class="media">
+      <div class="media-body">
+        <h5 class="mb-0">Trading Activities</h5>
+      </div>
+      <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+        <div class="icon-box-show onhover-show-div">
+          <ul>
+            <li> <a>
+                Done</a></li>
+            <li> <a>
+                Pending</a></li>
+            <li> <a>
+                Rejected</a></li>
+            <li> <a>In Progress</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <div class="table-responsive">
+      <table class="table table-bordernone">
+        <tbody>
+          @for (data of tradingData; track data) {
+          <tr>
+            <td>
+              <div class="media"> <i [ngClass]="data.arrow == 'arrow-up' ?  'font-success' : 'font-danger' ">
+                  <app-feather-icon [icon]="data.arrow"></app-feather-icon>
+                </i>
+                <div class="table-box-img bg-light-{{data.iconBg}}">
+                  <svg-icon src="assets/svgIcon/{{data.icon}}.svg"></svg-icon>
+                </div>
+                <div class="media-body">
+                  <div class="avatar-details"><a href="e-commerce/product-page">
+                      <h6>{{data.name}}</h6>
+                    </a><span> {{data.sub}}</span></div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <h6>{{data.coinPrice}}</h6><span>{{data.coinPriceSub}}</span>
+            </td>
+            <td><span>{{data.date}}</span></td>
+            <td class="text-right">
+              <div class="badge badge-light-{{data.iconBg}}">{{data.buySell}}</div>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

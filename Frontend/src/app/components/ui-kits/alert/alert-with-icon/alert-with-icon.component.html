@@ -1,0 +1,14 @@
+<div class="card height-equal">
+  <div class="card-header pb-0">
+    <h5>Alert With Icon</h5><span>Just add Any icon before text</span>
+  </div>
+  <div class="card-body">
+    @for (a of data; track a) {
+    <div class="alert alert-{{a.color}} dark alert-dismissible fade show" role="alert"> <app-feather-icon
+        [icon]=a.icon></app-feather-icon>
+      <p> You can check in on some of those fields below.</p>
+      <button class="btn-close" type="button" aria-label="Close" (click)="deleteMsg(a.id)"></button>
+    </div>
+    }
+  </div>
+</div>

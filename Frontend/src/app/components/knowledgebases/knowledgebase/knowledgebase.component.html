@@ -1,0 +1,17 @@
+<app-breadcrumb [title]="'knowledgebase'" [items]="['knowledgebase']" [active_item]="'knowledgebase'"></app-breadcrumb>
+<div class="container-fluid faq-section">
+   <div class="row">
+     <div class="col-12">
+      <app-help-board></app-help-board>
+     </div>
+     <app-faq-top-part></app-faq-top-part>
+     <div class="col-lg-12 featured-tutorial">
+       <div class="header-faq">
+         <h3 class="mb-0">Featured Tutorials</h3>
+       </div>
+       <div class="row">
+        <app-featured-tutorials [data]="featuredTutorials"></app-featured-tutorials>
+       </div>
+     </div>
+   </div>
+ </div>

@@ -1,0 +1,40 @@
+<div class="card">
+   <div class="card-header pb-0">
+     <h5>Material style left tab</h5><span>Add <code>.nav-success</code> class with nav class</span>
+   </div>
+   <div class="card-body">
+      <div class="d-flex">
+         <ul ngbNav #nav7="ngbNav" [activeId]="1" class="nav flex-column nav-success border-tab nav-left col-3" orientation="vertical">
+            <li [ngbNavItem]="1">
+               <a ngbNavLink>Home</a>
+               <ng-template ngbNavContent>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+               </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+               <a ngbNavLink>Profile</a>
+               <ng-template ngbNavContent>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+               </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+               <a ngbNavLink>Inbox</a>
+               <ng-template ngbNavContent>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+               </ng-template>
+            </li>
+            <li [ngbNavItem]="4">
+               <a ngbNavLink>Setting</a>
+               <ng-template ngbNavContent>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+               </ng-template>
+            </li>
+         </ul>
+         <div [ngbNavOutlet]="nav7"></div>
+      </div>
+   </div>
+ </div>

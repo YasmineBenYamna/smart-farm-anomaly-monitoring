@@ -1,0 +1,83 @@
+<app-breadcrumb [title]="'General'" [items]="['Widgets']" [active_item]="'General'"></app-breadcrumb>
+<div class="container-fluid general-widget">
+   <div class="row">
+     <div class="col-sm-6 col-xl-3 col-lg-6">
+       <app-laval-comp [data]="earnings"></app-laval-comp>
+     </div>
+     <div class="col-sm-6 col-xl-3 col-lg-6">
+      <app-laval-comp [data]="products"></app-laval-comp>
+    </div>
+    <div class="col-sm-6 col-xl-3 col-lg-6">
+      <app-laval-comp [data]="messages"></app-laval-comp>
+    </div>
+    <div class="col-sm-6 col-xl-3 col-lg-6">
+      <app-laval-comp [data]="newUser"></app-laval-comp>
+    </div>
+     <div class="col-xl-6 xl-100 box-col-12">
+      <app-sale-details></app-sale-details>
+     </div>
+     <div class="col-xl-6 xl-100 box-col-12">
+       <app-order-details></app-order-details>
+     </div>
+     <div class="col-xl-3 xl-50 col-md-6 box-col-6">
+       <div class="card">
+         <div class="cal-date-widget card-body">
+           <div class="cal-datepicker">
+             <ngb-datepicker class="datepicker-here float-sm-end" data-language="en" #d></ngb-datepicker>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="col-xl-3 xl-50 col-md-6 box-col-6">
+       <app-customer-feedback></app-customer-feedback>
+     </div>
+     <div class="col-xl-6 xl-100 col-sm-12 box-col-12">
+       <app-clock></app-clock>
+     </div>
+     <div class="col-xl-4 col-md-6 lg-50 box-col-6">
+       <app-recent-activity></app-recent-activity>
+     </div>
+     <div class="col-xl-4 col-md-6 box-col-6 lg-50">
+       <app-profile></app-profile>
+     </div>
+     <div class="col-xl-4 box-col-12 lg-100">
+       <div class="row">
+         <div class="col-xl-12 col-lg-6 box-col-6 lg-50">
+           <app-review></app-review>
+         </div>
+         <div class="col-xl-12 col-lg-6 box-col-6 lg-50">
+           <app-new-order></app-new-order>
+         </div>
+       </div>
+     </div>
+     <div class="col-sm-6 col-xl-3 xl-50 col-lg-6 box-col-6">
+       <app-social-media [data]="Facebook"></app-social-media>
+     </div>
+     <div class="col-sm-6 col-xl-3 xl-50 col-lg-6 box-col-6">
+      <app-social-media [data]="Linkedin"></app-social-media>
+    </div>
+    <div class="col-sm-6 col-xl-3 xl-50 col-lg-6 box-col-6">
+      <app-social-media [data]="Twitter"></app-social-media>
+    </div>
+    <div class="col-sm-6 col-xl-3 xl-50 col-lg-6 box-col-6">
+      <app-social-media [data]="Instagram"></app-social-media>
+    </div>
+     <div class="col-sm-12">
+       <app-usage-in-browser></app-usage-in-browser>
+     </div>
+     <div class="col-xl-6 xl-50 box-col-12">
+       <app-product-cart></app-product-cart>
+     </div>
+     <div class="col-xl-6 xl-50 box-col-12">
+      <app-employee-status></app-employee-status>
+     </div>
+     <div class="col-sm-12 col-lg-6 col-xl-4 xl-50 col-md-12 box-col-6">
+      <app-explain></app-explain>
+     </div>
+     <div class="col-sm-12 col-lg-6 col-xl-8 xl-50 col-md-12 box-col-6">
+       <app-contact-us></app-contact-us>
+     </div>
+   </div>
+ </div>
+ 
+ 

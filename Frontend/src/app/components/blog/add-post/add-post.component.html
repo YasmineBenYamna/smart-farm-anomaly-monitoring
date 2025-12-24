@@ -1,0 +1,78 @@
+<app-breadcrumb [title]="'Add Post'" [items]="['Blog']" [active_item]="'Add Post'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Post Edit</h5>
+        </div>
+        <div class="card-body add-post">
+          <form class="row needs-validation" novalidate="">
+            <div class="col-sm-12">
+              <div class="mb-3">
+                <label for="validationCustom01">Title:</label>
+                <input class="form-control" id="validationCustom01" type="text" name="validationCustom01"
+                  placeholder="Post Title" required="">
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="mb-3">
+                <label>Type:</label>
+                <div class="m-checkbox-inline">
+                  <label for="edo-ani">
+                    <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani" checked="">Text
+                  </label>
+                  <label for="edo-ani1">
+                    <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani">Image
+                  </label>
+                  <label for="edo-ani2">
+                    <input class="radio_animated" id="edo-ani2" type="radio" name="rdo-ani" checked="">Audio
+                  </label>
+                  <label for="edo-ani3">
+                    <input class="radio_animated" id="edo-ani3" type="radio" name="rdo-ani">Video
+                  </label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="col-form-label">
+                  <label>Category:</label>
+                  <div class="js-example-placeholder-multiple col-sm-12">
+                    <ng-select [items]="cities2" bindLabel="name" bindValue="id" [multiple]="true"
+                      placeholder="Select cities" [(ngModel)]="selectedCityIds" name="name">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+              <div class="email-wrapper">
+                <div class="theme-form">
+                  <div class="mb-3">
+                    <label>Content:</label>
+                    <div class="NgxEditor__Wrapper">
+                      <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                      <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false"
+                        [placeholder]="'Type here...'"></ngx-editor>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <form>
+            <div class="row">
+              <div class="col">
+                <div class="mb-2">
+                  <label>Upload project file</label>
+                    <dropzone [config]="config" [message]="text" [className]="'custom-drop-zone'"
+                      (error)="onUploadError($event)" (success)="onUploadSuccess($event)"></dropzone>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="btn-showcase text-end">
+            <button class="btn btn-primary" type="submit">Post</button>
+            <input class="btn btn-light" type="reset" value="Discard">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

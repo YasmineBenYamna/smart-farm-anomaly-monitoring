@@ -1,0 +1,46 @@
+<app-breadcrumb [title]="'Popover'" [items]="['Ui Kits']" [active_item]="'Popover'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row popover-main">
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Basic Examples</h5><span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+         </div>
+         <div class="card-body">
+           <div class="btn-showcase">
+              <button type="button" class="btn btn-primary example-popover" placement="top" [autoClose]="false" triggers="manual" #p="ngbPopover" (click)="p.open()"
+              ngbPopover="And here's some amazing content. It's very engaging. Right?" popoverTitle="Popover title">
+              Click to toggle popover
+              </button>
+
+              <a class="example-popover btn btn-primary"(click)="p.close()">Dismissible popover</a>
+              
+              <button type="button" class="example-popover btn btn-primary" ngbPopover="Vivamus 
+              sagittis lacus vel augue laoreet rutrum faucibus." triggers="mouseenter:mouseleave" popoverTitle="Popover title">On Hover Tooltip</button>
+
+                <span class="d-inline-block" tabindex="0" data-bs-placement="right" data-bs-toggle="popover" data-container="body" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
+                <button class="btn btn-primary" type="button" disabled>Disabled button</button></span>
+            </div>
+         </div>
+       </div>
+     </div>
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Direction</h5><span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+         </div>
+         <div class="card-body">
+            <div class="btn-showcase">
+              <button class="example-popover btn btn-primary" type="button" data-container="body" data-bs-toggle="popover" placement="top" popoverTitle="Popover title" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top</button>
+
+              <button class="example-popover btn btn-primary" type="button" data-container="body" data-bs-toggle="popover" placement="right" popoverTitle="Popover title" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on right</button>
+              
+              <button class="example-popover btn btn-primary" type="button" data-container="body" data-bs-toggle="popover" placement="bottom" popoverTitle="Popover title" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on bottom</button>
+
+              <button class="example-popover btn btn-primary" type="button" data-container="body" data-bs-toggle="popover" placement="left" popoverTitle="Popover title" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on left</button>
+            </div>
+          </div>
+       </div>
+     </div>
+   </div>
+ </div>

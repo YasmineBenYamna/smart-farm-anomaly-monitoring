@@ -1,0 +1,31 @@
+<div class="card">
+   <div class="card-header pb-0">
+     <div class="row">
+       <div class="col-9">
+         <h5>Order Status</h5>
+       </div>
+       <div class="col-3 text-end"><i class="text-muted" data-feather="shopping-bag"></i></div>
+     </div>
+   </div>
+   <div class="card-body">
+     <div class="chart-container">
+       <div id="linechart">
+         <apx-chart 
+            [chart]="orderStatus2.chart"
+            [dataLabels]="orderStatus2.dataLabels"
+            [stroke]="orderStatus2.stroke"
+            [grid]="orderStatus2.grid"
+            [fill]="orderStatus2.fill"
+            [colors]="orderStatus2.colors"
+            [series]="orderStatus2.series"
+            [markers]="orderStatus2.markers"
+            [yaxis]="orderStatus2.yaxis"
+            [xaxis]="orderStatus2.xaxis"
+            [title]="orderStatus2.title"
+            [legend]="orderStatus2.legend"
+            [subtitle]="orderStatus2.subtitle">
+            </apx-chart>
+       </div>
+     </div>
+   </div>
+ </div>

@@ -1,0 +1,61 @@
+<div class="card ongoing-project">
+  <div class="card-header card-no-border">
+    <div class="media media-dashboard">
+      <div class="media-body">
+        <h5 class="mb-0">Ongoing Projects </h5>
+      </div>
+      <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+        <div class="icon-box-show onhover-show-div">
+          <ul>
+            <li> <a>
+                Done</a></li>
+            <li> <a>
+                Pending</a></li>
+            <li> <a>
+                Rejected</a></li>
+            <li> <a>In Progress</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <div class="table-responsive custom-scrollbar">
+      <table class="table table-bordernone">
+        <thead>
+          <tr>
+            <th> <span>Name </span></th>
+            <th> <span>Date</span></th>
+            <th> <span>Project </span></th>
+            <th> <span>Status </span></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (data of projectData; track data) {
+          <tr>
+            <td>
+              <div class="media">
+                <div class="square-box me-2"><img class="img-fluid b-r-5" src="{{data.image}}" alt=""></div>
+                <div class="media-body ps-2">
+                  <div class="avatar-details"><a href="e-commerce/product-page">
+                      <h6>{{data.name}}</h6>
+                    </a><span> {{data.temeName}}</span></div>
+                </div>
+              </div>
+            </td>
+            <td class="img-content-box">
+              <h6>{{data.date}}</h6><span>{{data.subTime}}</span>
+            </td>
+            <td>
+              <h6>{{data.project}}</h6><span>{{data.amount}}</span>
+            </td>
+            <td>
+              <div class="badge {{data.color}}">{{data.status}}</div>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

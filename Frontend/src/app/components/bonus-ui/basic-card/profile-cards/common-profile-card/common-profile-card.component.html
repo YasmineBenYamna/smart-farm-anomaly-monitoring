@@ -1,0 +1,32 @@
+@for (data of data; track data) {
+<div class="card custom-card">
+  <div class="card-header"><img class="img-fluid" src="{{data.bgImg}}" alt=""></div>
+  <div class="card-profile"><img class="rounded-circle" src="{{data.userProfile}}" alt=""></div>
+  <div class="text-center profile-details"><a href="user-profile.html">
+      <h4>{{data.name}}</h4>
+    </a>
+    <h6>{{data.designation}}</h6>
+  </div>
+  <ul class="card-social">
+    <li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="https://accounts.google.com"><i class="fa fa-google-plus"></i></a></li>
+    <li><a href="https://twitter.com "><i class="fa fa-twitter"></i></a></li>
+    <li><a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+    <li><a href="javascript:void(0)"><i class="fa fa-rss"></i></a></li>
+  </ul>
+  <div class="card-footer row">
+    <div class="col-4 col-sm-4">
+      <h6>Follower</h6>
+      <h3 class="counter">{{data.Follower}}</h3>
+    </div>
+    <div class="col-4 col-sm-4">
+      <h6>Following</h6>
+      <h3><span class="counter">{{data.Following}}</span>K</h3>
+    </div>
+    <div class="col-4 col-sm-4">
+      <h6>Total Post</h6>
+      <h3><span class="counter">{{data.totalPost}}</span>M</h3>
+    </div>
+  </div>
+</div>
+}

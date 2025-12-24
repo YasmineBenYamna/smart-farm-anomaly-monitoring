@@ -1,0 +1,40 @@
+<div class="card special-discount">
+  <div class="card-body">
+    <owl-carousel-o [options]="owlcarousel1Options">
+      @for (d of discount; track d) {
+      <ng-template carouselSlide [id]="d.id">
+        <div class="item">
+          <div class="row discount-block">
+            <div class="col-xxl-7 col-xl-8 col-md-6 box-col-7">
+              <div class="discount-detail">
+                <div>
+                  <h5>
+                    Special Discount <span class="font-primary f-w-500">{{ d.offer }}</span></h5>
+                  <h3 class="m-auto">Deal of the Day from <span class="font-primary">{{ d.price }}</span></h3>
+                  <ul class="timer-sec countdown">
+                    <li>
+                      <h6 class="font-primary m-0 days" id="days"></h6><span class="font-dark time">Days</span>
+                    </li>
+                    <li>
+                      <h6 class="font-primary m-0 hours" id="hours"></h6><span class="font-dark">Hours</span>
+                    </li>
+                    <li>
+                      <h6 class="font-primary m-0 minutes" id="minutes"></h6><span class="font-dark">Min</span>
+                    </li>
+                    <li>
+                      <h6 class="font-primary m-0 seconds" id="seconds"></h6><span class="font-dark">Sec</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-5 col-xl-4 col-md-6 box-col-5">
+              <div class="img-wrraper"><img class="img-fluid" src="{{ d.img }}" alt="" /></div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      }
+    </owl-carousel-o>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<app-breadcrumb [title]="'FAQ'" [items]="['Apps']" [active_item]="'FAQ'"></app-breadcrumb>
+<div class="container-fluid faq-page">
+   <div class="faq-wrap">
+     <div class="row">
+       <app-faq-top-part></app-faq-top-part>
+       <div class="col-lg-12">
+         <div class="header-faq">
+           <h3 class="mb-0">Quick Questions are answered</h3>
+         </div>
+         <div class="row default-according style-1 faq-accordion" id="accordionoc">
+           <div class="col-xl-8 xl-60 col-lg-6 col-md-7 box-col-7">
+            <app-quick-que-and-ans></app-quick-que-and-ans>
+             
+             <app-intellectual-property></app-intellectual-property>
+             
+             <app-selling-and-buying></app-selling-and-buying>
+             <app-user-accounts></app-user-accounts>
+           </div>
+           <div class="col-xl-4 xl-40 col-lg-6 col-md-5 box-col-5">
+             <div class="row">
+               <app-search></app-search>
+               <div class="col-lg-12">
+                 <app-navigation></app-navigation>
+               </div>
+               <div class="col-lg-12">
+                 <app-latest-updates></app-latest-updates>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="col-lg-12 featured-tutorial">
+        <div class="header-faq">
+          <h3 class="mb-0">Featured Tutorials</h3>
+        </div>
+         <app-featured-tutorials [data]="faqData"></app-featured-tutorials>
+       </div>
+       <div class="col-lg-12 faq-articles">
+         <app-latest-articles-and-videos></app-latest-articles-and-videos>
+       </div>
+     </div>
+   </div>
+ </div>

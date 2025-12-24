@@ -1,0 +1,69 @@
+<div class="job-sidebar md-sidebar"><a class="btn btn-primary md-sidebar-toggle" href="javascript:void(0)"
+    (click)="openFilter()">job filter</a>
+  <div class="md-sidebar-aside job-left-aside custom-scrollbar" [class.open]="OpenFilter">
+    <div class="default-according style-1 job-accordion" id="accordionoc">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0 p-0">
+                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseicon"
+                  aria-expanded="true" aria-controls="collapseicon">Filter</button>
+              </h5>
+            </div>
+            <div class="collapse show" id="collapseicon" aria-labelledby="collapseicon" data-parent="#accordion">
+              <div class="card-body filter-cards-view animate-chk">
+                <div class="job-filter mb-3">
+                  <div class="faq-form">
+                    <input class="form-control" type="text" placeholder="Search.."><i class="search-icon"
+                      data-feather="search"></i>
+                  </div>
+                </div>
+                <div class="job-filter">
+                  <div class="faq-form">
+                    <input class="form-control" type="text" placeholder="location.."><i class="search-icon"
+                      data-feather="map-pin"></i>
+                  </div>
+                </div>
+                <div class="checkbox-animated">
+                  @for (chack of filterChackBox; track chack) {
+                  <label class="d-block" for="{{chack.id}}">
+                    <input class="checkbox_animated" id="{{chack.id}}" type="checkbox"> {{chack.lable}}
+                    ({{chack.vacuncy}})
+                  </label>
+                  }
+                </div>
+                <button class="btn btn-primary text-center" type="button">Find jobs</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        @for (f of filter; track f) {
+        <div class="col-xl-12">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0 p-0">
+                <button class="btn btn-link" (click)="collapse.toggle()" [attr.aria-expanded]="!f.isCollapsed"
+                  aria-controls="collapseExample">{{f.title}}</button>
+              </h5>
+            </div>
+            <div class="collapse show" #collapse="ngbCollapse" [(ngbCollapse)]="f.isCollapsed">
+              <div class="card-body animate-chk">
+                <div class="location-checkbox">
+                  @for (check of f.checkBoxs; track check) {
+                  <label class="d-block" for="chk-ani6">
+                    <input class="checkbox_animated" id="chk-ani6" type="checkbox">{{check.checkTitle}}<span
+                      class="d-block">{{check.subTitle}}</span>
+                  </label>
+                  }
+                </div>
+              </div>
+              <button class="btn btn-block btn-primary text-center" type="button">{{f.button}}</button>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

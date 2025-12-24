@@ -1,0 +1,54 @@
+<div class="card">
+    <div class="card-body">
+        <div class="product-info">
+            <h4>Product Image</h4>
+            <form class="form theme-form">
+                <!-- add multiple file dropzone -->
+                <dropzone [config]="config" [message]="text" [className]="'custom-drop-zone'"
+                (error)="onUploadError($event)" (success)="onUploadSuccess($event)"></dropzone>
+            </form>
+            <h4 class="mt-4">Select Size</h4>
+            <form class="form theme-form">
+                <div class="product-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlSelect6">Size</label>
+                                <select class="form-select" id="exampleFormControlSelect6">
+                                    <option>IND-7</option>
+                                    <option>IND-8</option>
+                                    <option>IND-9</option>
+                                    <option>IND-10</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlSelect7">Date</label>
+                                <input class="form-control" id="exampleFormControlInput7" type="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput10">Price</label>
+                                <input class="form-control" id="exampleFormControlInput10" type="number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="mt-4">
+            <div class="row">
+                <div class="col">
+                    <div class="text-end">
+                        <a class="btn btn-primary me-3" href="#">Add</a>
+                        <a class="btn btn-danger" href="#">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

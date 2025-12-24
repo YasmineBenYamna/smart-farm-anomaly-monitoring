@@ -1,0 +1,30 @@
+<app-breadcrumb [title]="'Invoice'" [items]="['E - Commerce']" [active_item]="'Invoice'"></app-breadcrumb>
+<div class="container-fluid credit-card payment-details">
+   <div class="row">
+     <!-- Individual column searching (text inputs) Starts-->
+     <div class="col-xxl-8 box-col-12">
+       <app-credit-card></app-credit-card>
+     </div>
+     <!-- Individual column searching (text inputs) Ends-->
+     <!-- Debit Card Starts-->
+     <div class="col-xxl-4 col-lg-6 box-col-6 debit-card">
+       <app-debit-card></app-debit-card>
+     </div>
+     <!-- Debit Card Ends-->
+     <!-- COD Starts-->
+     <div class="col-xxl-4 col-lg-6 box-col-6">
+       <app-cod></app-cod>
+     </div>
+     <!-- COD Ends-->
+     <!-- EMI Starts-->
+     <div class="col-xxl-4 col-lg-6 box-col-6">
+       <app-emi></app-emi>
+     </div>
+     <!-- EMI Ends-->
+     <!-- EMI Starts-->
+     <div class="col-xxl-4 col-lg-6 box-col-6">
+       <app-net-banking></app-net-banking>
+     </div>
+     <!-- EMI Ends-->
+   </div>
+ </div>

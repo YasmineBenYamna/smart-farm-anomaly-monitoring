@@ -1,0 +1,73 @@
+<app-breadcrumb [title]="'Order History'" [items]="['E - Commerce']" [active_item]="'Order History'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Order history</h5>
+        </div>
+        <div class="card-body">
+          <div class="order-history table-responsive">
+            <form>
+              <div class="mb-3 row justify-content-end">
+                <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Search:</label>
+                <div class="col-xs-3 col-sm-auto">
+                  <input id="table-complete-search" type="text" class="form-control" name="searchTerm"
+                    [(ngModel)]="service.searchTerm">
+                </div>
+                @if (service.loading$ | async) {
+                <span class="col col-form-label">Loading...</span>
+                }
+              </div>
+              <table class="table table-bordernone display" id="basic-1">
+                <thead>
+                  <tr>
+                    <th scope="col" sortable="img" (sort)="onSort($event)">Product</th>
+                    <th scope="col" sortable="product" (sort)="onSort($event)">Product name</th>
+                    <th scope="col" sortable="size" (sort)="onSort($event)">Size</th>
+                    <th scope="col" sortable="color" (sort)="onSort($event)">Color</th>
+                    <th scope="col" sortable="articleNumber" (sort)="onSort($event)">Article number</th>
+                    <th scope="col" sortable="units" (sort)="onSort($event)">Qty</th>
+                    <th scope="col" sortable="price" (sort)="onSort($event)">Price</th>
+                    <th scope="col"><i class="fa fa-angle-down"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (order of orders$ | async; track order) {
+                  <tr>
+                    <td><a href="e-commerce/product-page"><img class="img-fluid img-30" src="{{order.img}}"
+                          alt="{{order.product}}"></a></td>
+                    <td>
+                      <div class="product-name"><a href="#">{{order.product}}</a>
+                        <div class="order-process"><span class="order-process-circle" [ngClass]="{'shipped-order' : order.status === 'Shipped',
+                           'cancel-order' : order.status === 'Cancelled'}"></span>{{order.status}}</div>
+                      </div>
+                    </td>
+                    <td>{{order.size}}</td>
+                    <td>{{order.color}}</td>
+                    <td>{{order.articleNumber}}</td>
+                    <td>{{order.units}}</td>
+                    <td>${{order.price}}</td>
+                    <td><app-feather-icon [icon]="'more-vertical'"></app-feather-icon></td>
+
+                  </tr>
+                  }
+                </tbody>
+              </table>
+              <div class="d-flex justify-content-between p-2">
+                <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+                  <option [ngValue]="5">5 items per page</option>
+                  <option [ngValue]="10">10 items per page</option>
+                  <option [ngValue]="15">15 items per page</option>
+                  <option [ngValue]="30">30 items per page</option>
+                </select>
+                <ngb-pagination [collectionSize]="(total$ | async)!" [(page)]="service.page"
+                  [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

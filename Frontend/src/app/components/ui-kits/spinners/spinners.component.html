@@ -1,0 +1,24 @@
+<app-breadcrumb [title]="'Spinners'" [items]="['Ui Kits']" [active_item]="'Spinners'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Loader Style</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            @for (l of Loader; track l) {
+            <div class="col-sm-6 col-md-3">
+              <h6 class="sub-title mb-0 text-center">Loader {{l}}</h6>
+              <div class="loader-box">
+                <div class="loader-{{l}}"></div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

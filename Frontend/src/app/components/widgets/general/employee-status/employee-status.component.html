@@ -1,0 +1,60 @@
+<div class="card employee-status">
+  <div class="card-header pb-0">
+    <div class="media">
+      <div class="media-body">
+        <h5>EMPLOYEE STATUS</h5>
+      </div>
+      <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+        <div class="icon-box-show onhover-show-div">
+          <ul>
+            <li> <a>
+                Done</a></li>
+            <li> <a>
+                Pending</a></li>
+            <li> <a>
+                Rejected</a></li>
+            <li> <a>In Progress</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordernone">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Skill Level</th>
+            <th scope="col">Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (data of employeeStatusData; track data) {
+          <tr>
+            <td>
+              <div class="media"><img src="{{data.employeeProfileImg}}" alt="">
+                <div class="media-body">
+                  <h5>{{data.name}}<span class="text-muted">{{data.sub}}</span></h5>
+                </div>
+              </div>
+            </td>
+            <td>{{data.designation}}</td>
+            <td>
+              <div class="progress-showcase">
+                <div class="progress" style="height: 8px;">
+                  <div class="progress-bar bg-{{data.levelColor}}" role="progressbar"
+                    [ngStyle]="{'width':data.skillLevel}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>{{data.experience}}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

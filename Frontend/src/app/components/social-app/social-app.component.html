@@ -1,0 +1,40 @@
+<app-breadcrumb [title]="'Social App'" [items]="['Apps']" [active_item]="'Social App'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="user-profile social-app-profile">
+    <div class="row"> 
+      <div class="col-sm-12">
+        <app-user-profile></app-user-profile>
+      </div>
+      <div class="col-sm-12 box-col-12">
+        <div class="card">                            
+          <div class="social-tab">
+            <ul class="nav nav-tabs" id="top-tab" role="tablist">
+              <li class="nav-item"><a class="nav-link active" role="tab" [ngClass]="{'active show': openTab == 'timeline'}" (click)="tabbed('timeline')"><i data-feather="clock"></i>Timeline</a></li>
+              <li class="nav-item"><a class="nav-link" role="tab" [ngClass]="{'active show': openTab == 'about'}" (click)="tabbed('about')"><i data-feather="alert-circle"></i>About</a></li>
+              <li class="nav-item"><a class="nav-link" role="tab" [ngClass]="{'active show': openTab == 'friends'}" (click)="tabbed('friends')"><i data-feather="users"></i>Friends</a></li>
+              <li class="nav-item"><a class="nav-link" role="tab" [ngClass]="{'active show': openTab == 'photos'}" (click)="tabbed('photos')"><i data-feather="image"></i>Photos</a></li>
+            </ul>
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search......."><span class="input-group-text"> <i class="fa fa-search"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" id="top-tabContent">
+      <div class="tab-pane fade show active" [ngClass]="{'show active': openTab == 'timeline'}">
+       <app-time-line></app-time-line>
+      </div>
+      <div class="tab-pane fade" [ngClass]="{'show active': openTab == 'about'}">
+       <app-about></app-about>
+      </div>
+      <div class="tab-pane fade" [ngClass]="{'show active': openTab == 'friends'}">
+       <app-friends></app-friends>
+      </div>
+      <div class="tab-pane fade" [ngClass]="{'show active': openTab == 'photos'}">
+        <app-photos></app-photos>
+      </div>
+    </div>
+  </div>
+</div>
+

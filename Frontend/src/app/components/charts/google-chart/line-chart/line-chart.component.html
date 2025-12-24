@@ -1,0 +1,170 @@
+<!-- Chart Card -->
+<div class="card mt-4">
+  <div class="card-header pb-0">
+    <div class="d-flex justify-content-between align-items-center">
+      <h5>📊 Sensor Readings</h5>
+      <span class="badge badge-info">{{ allReadings.length }} readings</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Loading State -->
+    @if (isLoadingChart) {
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3">Loading sensor data...</p>
+      </div>
+    }
+
+    <!-- No Data -->
+    @else if (!chart || allReadings.length === 0) {
+      <div class="text-center py-5">
+        <i class="fa fa-chart-line fa-3x text-muted mb-3"></i>
+        <h5>No Sensor Data</h5>
+        <p class="text-muted">No readings available for this plot yet.</p>
+      </div>
+    }
+
+    <!-- Chart with Horizontal Scroll -->
+    @else {
+      <div class="chart-scroll-container">
+        <google-chart [data]="chart"></google-chart>
+      </div>
+    }
+  </div>
+</div>
+<!-- Alerts/Anomalies Table -->
+<div class="card mt-4">
+  <div class="card-header pb-0">
+    <div class="d-flex justify-content-between align-items-center">
+      <h5>🚨 Anomaly Alerts</h5>
+      <span class="badge badge-primary">{{ anomalies.length }} Total</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Loading State -->
+    @if (isLoadingAnomalies) {
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3">Loading anomalies...</p>
+      </div>
+    }
+
+    <!-- No Anomalies -->
+    @else if (anomalies.length === 0) {
+      <div class="text-center py-5">
+        <i class="fa fa-check-circle fa-3x text-success mb-3"></i>
+        <h5>No Anomalies Detected</h5>
+        <p class="text-muted">All sensor readings are within normal ranges.</p>
+      </div>
+    }
+
+    <!-- Anomalies Table -->
+    @else {
+      <div class="table-responsive">
+        <table class="table table-hover anomaly-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Anomaly Type</th>
+              <th>Severity</th>
+              <th>Confidence</th>
+              <th>Sensor Value</th>
+              <th>Action</th>
+              <th>Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (anomaly of anomalies; track anomaly.id) {
+              <tr>
+                <!-- Timestamp -->
+                <td>
+                  <small class="text-muted">
+                    {{ anomaly.timestamp | date:'short' }}
+                  </small>
+                </td>
+
+                <!-- Anomaly Type (Cleaned) -->
+                <td>
+                  <strong>{{ getCleanAnomalyType(anomaly.anomaly_type) }}</strong>
+                </td>
+
+                <!-- Severity Badge -->
+                <td>
+                  <span class="badge" [ngClass]="getSeverityClass(anomaly.severity)">
+                    {{ anomaly.severity | uppercase }}
+                  </span>
+                </td>
+
+                <!-- Model Confidence -->
+                <td>
+                  <div class="confidence-bar">
+                    <div class="progress" style="height: 20px;">
+                      <div 
+                        class="progress-bar" 
+                        [ngClass]="{
+                          'bg-success': anomaly.model_confidence >= 0.8,
+                          'bg-warning': anomaly.model_confidence >= 0.5 && anomaly.model_confidence < 0.8,
+                          'bg-danger': anomaly.model_confidence < 0.5
+                        }"
+                        [style.width.%]="anomaly.model_confidence * 100"
+                        role="progressbar">
+                        <small>{{ formatConfidence(anomaly.model_confidence) }}</small>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <!-- Sensor Value -->
+                <td>
+                  @if (anomaly.sensor_reading) {
+                    <code>{{ anomaly.sensor_reading.value.toFixed(2) }}</code>
+                    @if (anomaly.sensor_reading.sensor_type === 'moisture' || anomaly.sensor_reading.sensor_type === 'humidity') {
+                      <small class="text-muted">%</small>
+                    }
+                    @if (anomaly.sensor_reading.sensor_type === 'temperature') {
+                      <small class="text-muted">°C</small>
+                    }
+                  } @else {
+                    <span class="text-muted">N/A</span>
+                  }
+                </td>
+                
+<!-- Explanation Column -->
+<td>
+  @if (anomaly.recommendation) {
+    <div 
+      class="explanation-text"
+      [title]="anomaly.recommendation.explanation_text">
+      {{ anomaly.recommendation.explanation_text }}
+    </div>
+  } @else {
+    <span class="text-muted">-</span>
+  }
+</td>
+ <!-- Action Column -->
+<td>
+  @if (anomaly.recommendation) {
+    <span 
+      class="badge badge-info action-badge"
+      [title]="anomaly.recommendation.recommended_action">
+      {{ anomaly.recommendation.recommended_action }}
+    </span>
+  } @else {
+    <span class="text-muted">-</span>
+  }
+</td>
+
+
+               
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+</div>

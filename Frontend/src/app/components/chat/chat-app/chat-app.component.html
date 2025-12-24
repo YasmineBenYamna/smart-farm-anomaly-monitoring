@@ -1,0 +1,23 @@
+<app-breadcrumb [title]="'Chat App'" [items]="['Chat']" [active_item]="'Chat App'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row">
+     <div class="col call-chat-sidebar">
+       <div class="card">
+         <div class="card-body chat-body">
+           <div class="chat-box">
+              <app-users-chats></app-users-chats>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="col call-chat-body">
+       <div class="card">
+         <div class="card-body p-0">
+           <div class="row chat-box">
+              <app-chats></app-chats>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

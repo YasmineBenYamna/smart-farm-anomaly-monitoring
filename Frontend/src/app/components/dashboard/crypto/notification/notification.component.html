@@ -1,0 +1,52 @@
+<div class="card cripto-notification">
+  <div class="card-header card-no-border">
+    <div class="media media-dashboard">
+      <div class="media-body">
+        <h5 class="mb-0">Notification</h5>
+      </div>
+      <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+        <div class="icon-box-show onhover-show-div">
+          <ul>
+            <li> <a>
+                Latest </a></li>
+            <li> <a>
+                Earlist</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <div class="table-responsive">
+      <table class="table table-bordernone">
+        <tbody>
+          @for (data of notificationData; track data) {
+          <tr>
+            <td>
+              <div class="media">
+                <div class="square-box"><img src="assets/images/avtar/teacher.png" alt=""></div>
+                <div class="media-body">
+                  <h5>{{data.name}}<span class="font-theme-light f-w-400 f-12 ms-3">{{data.activity}}</span></h5>
+                  <p>{{data.massage}}</p><span class="font-primary f-12">{{data.price}}</span>
+                  @if (data.chart) {
+                  <div class="notification-chart-sec">
+                    <div id="notification-chart">
+                      <apx-chart [series]="notification.series" [chart]="notification.chart"
+                        [dataLabels]="notification.dataLabels" [stroke]="notification.stroke"
+                        [xaxis]="notification.xaxis" [tooltip]="notification.tooltip" [yaxis]="notification.yaxis"
+                        [grid]="notification.grid" [legend]="notification.legend" [colors]="notification.colors">
+                      </apx-chart>
+                    </div><span class="font-primary f-w-400 f-10">{{data.p}}</span>
+                  </div>
+                  }
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-light-theme-light font-theme-light">{{data.date}}</span></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

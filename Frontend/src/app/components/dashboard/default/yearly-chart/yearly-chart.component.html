@@ -1,0 +1,25 @@
+<div class="card yearly-chart">
+   <div class="card-header card-no-border pb-0">
+     <h5 class="pb-2">$3,500,000</h5>
+     <h6 class="font-theme-light f-14 m-0">November 2022</h6>
+   </div>
+   <div class="card-body pt-0">
+     <div> 
+       <div id="yearly-chart">
+        <apx-chart
+              [annotations]="yearlyChart.annotations"  
+              [chart]="yearlyChart.chart"
+              [dataLabels]="yearlyChart.dataLabels"
+              [stroke]="yearlyChart.stroke"
+              [yaxis]="yearlyChart.yaxis"
+              [colors]="yearlyChart.colors" 
+              [series]="yearlyChart.series"
+              [grid]="yearlyChart.grid"
+              [xaxis]="yearlyChart.xaxis"
+              [tooltip]="yearlyChart.tooltip"
+              [responsive]="yearlyChart.responsive">
+            </apx-chart>
+       </div>
+     </div>
+   </div>
+ </div>

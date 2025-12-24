@@ -1,0 +1,165 @@
+<app-breadcrumb [title]="'Modal'" [items]="['Ui Kits']" [active_item]="'Modal'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row">
+     <div class="col-sm-12">
+       <app-static-example></app-static-example>
+     </div>
+     <div class="col-sm-12">
+       <app-basic-modal></app-basic-modal>
+     </div>
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Varying modal content</h5>
+         </div>
+         <div class="card-body">
+            <div class="btn-showcase">
+              <button class="btn btn-primary" type="button" data-whatever="@mdo" (click)="openMdoModal(modContent)">Open modal for &#64;mdo</button>
+
+              <button class="btn btn-primary" type="button" data-whatever="@fat" (click)="openFatModal(fatContent)">Open modal for &#64;fat</button>
+
+              <button class="btn btn-primary" type="button" data-whatever="@getbootstrap" (click)="openGetBootstrapModal(getContent)">Open modal for &#64;getbootstrap</button>
+            </div>
+          </div>
+       </div>
+     </div>
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Sizes modal</h5>
+         </div>
+         <div class="card-body">
+           <div class="btn-showcase">
+            <!-- xtra Large modal-->
+            <button class="btn btn-primary" type="button" (click)="xlModal(xlcontent)">Extra Large modal</button>
+            
+            <!-- Large modal-->
+            <button class="btn btn-primary" type="button" (click)="lmModal(lmcontent)">Large modal</button>
+            
+            <!-- Small modal-->
+            <button class="btn btn-primary" type="button" (click)="smModal(content)">Small modal</button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Small modal</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p>&hellip;</p>
+  </div>
+</ng-template>
+
+<ng-template #lmcontent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Large modal</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p>&hellip;</p>
+  </div>
+</ng-template>
+
+<ng-template #xlcontent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Extra large modal</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p>&hellip;</p>
+  </div>
+</ng-template>
+
+
+ <ng-template #modContent let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">New message</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label class="col-form-label" for="recipient-name">Recipient:</label>
+        <input class="form-control" id="recipient-name" type="text" value="@fat">
+      </div>
+      <div class="mb-3">
+        <label class="col-form-label" for="message-text">Message:</label>
+        <textarea class="form-control"></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button">Close</button>
+    <button class="btn btn-primary" type="button">Send message</button>
+  </div>
+</ng-template> 
+
+
+ <ng-template #fatContent let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">New message</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label class="col-form-label" for="recipient-name">Recipient:</label>
+        <input class="form-control" id="recipient-name" type="text" value="@Mat">
+      </div>
+      <div class="mb-3">
+        <label class="col-form-label" for="message-text">Message:</label>
+        <textarea class="form-control"></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button">Close</button>
+    <button class="btn btn-primary" type="button">Send message</button>
+  </div>
+</ng-template>
+
+
+<ng-template #getContent let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">New message</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label class="col-form-label" for="recipient-name">Recipient:</label>
+        <input class="form-control" type="text" value="@getbootstrap">
+      </div>
+      <div class="mb-3">
+        <label class="col-form-label" for="message-text">Message:</label>
+        <textarea class="form-control"></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button">Close</button>
+    <button class="btn btn-primary" type="button">Send message</button>
+  </div>
+</ng-template>
+
+
+ <ng-template #simpleContent let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">...</div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button">Close</button>
+    <button class="btn btn-secondary" type="button">Save changes</button>
+  </div>
+</ng-template>
+
+
+
+

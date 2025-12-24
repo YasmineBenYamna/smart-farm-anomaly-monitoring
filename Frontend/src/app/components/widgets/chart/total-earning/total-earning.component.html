@@ -1,0 +1,58 @@
+<div class="card o-hidden">
+   <div class="card-header pb-0">
+     <div class="media">
+       <div class="media-body">
+         <h5>Total Earning</h5>
+       </div>
+       <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+         <div class="icon-box-show onhover-show-div">
+           <ul> 
+             <li> <a>
+                  Done</a></li>
+             <li> <a>
+                  Pending</a></li>
+             <li> <a>
+                  Rejected</a></li>
+             <li> <a>In Progress</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="bar-chart-widget">
+     <div class="top-content bg-primary"></div>
+     <div class="bottom-content card-body">
+       <div class="row">
+         <div class="col-12">
+           <div id="chart-widget5">
+            <apx-chart 
+            [chart]="earningchart.chart"
+            [series]="earningchart.series"
+            [plotOptions]="earningchart.plotOptions"
+            [fill]="earningchart.fill"
+            [stroke]="earningchart.stroke"
+            [labels]="earningchart.labels"
+            [responsive]="earningchart.responsive">
+            </apx-chart> </div>
+         </div>
+       </div>
+       <div class="row text-center">
+         <div class="col-4 b-r-light">
+           <div><span class="font-primary">12%<i class="icon-angle-up f-12 ms-1"></i></span><span class="text-muted block-bottom">Year</span>
+             <h4 class="num m-0"><span class="counter color-bottom">3659</span>M</h4>
+           </div>
+         </div>
+         <div class="col-4 b-r-light">
+           <div><span class="font-primary">15%<i class="icon-angle-up f-12 ms-1"></i></span><span class="text-muted block-bottom">Month</span>
+             <h4 class="num m-0"><span class="counter color-bottom">698</span>M</h4>
+           </div>
+         </div>
+         <div class="col-4">
+           <div><span class="font-primary">34%<i class="icon-angle-up f-12 ms-1"></i></span><span class="text-muted block-bottom">Today</span>
+             <h4 class="num m-0"><span class="counter color-bottom">9361</span>M</h4>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

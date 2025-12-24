@@ -1,0 +1,59 @@
+<app-breadcrumb [title]="'Email Compose'" [items]="['Email']" [active_item]="'Email Compose'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="email-wrap">
+     <div class="row">
+       <div class="col-xl-3 box-col-3 col-md-6 xl-30">
+         <app-mail-filter></app-mail-filter>
+       </div>
+       <div class="col-xl-9 box-col-9 col-md-12 xl-70">
+         <div class="email-right-aside">
+           <div class="card email-body">
+             <div class="email-profile">                                  
+               <div class="email-body">                                        
+                 <div class="email-compose">
+                   <div class="email-top compose-border">                                              
+                     <div class="compose-header">
+                       <h4 class="mb-0">New Message</h4>
+                       <button class="btn btn-primary" type="button"><i class="fa fa-file me-2"></i> save</button>
+                     </div>
+                   </div>
+                   <div class="email-wrapper">
+                     <form class="theme-form">
+                       <div class="form-group">
+                         <label class="col-form-label pt-0" for="exampleInputEmail1">To</label>
+                         <input class="form-control" id="exampleInputEmail1" type="email">
+                       </div>
+                       <div class="form-group">
+                         <label for="exampleInputPassword1">Subject</label>
+                         <input class="form-control" id="exampleInputPassword1" type="text">
+                       </div>
+                       <div class="form-group">
+                         <label>Message</label>
+                         <div class="NgxEditor__Wrapper">
+                          <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                          <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+                        </div>
+                       </div>
+                       <div class="form-group">
+                         <div class="digits text-center">
+                          <dropzone [config]="config" [message]="text" [className]="'custom-drop-zone'"
+                          (error)="onUploadError($event)" (success)="onUploadSuccess($event)"></dropzone>
+                         </div>
+                       </div>
+                     </form>
+                     <div class="action-wrapper">
+                       <ul class="actions">
+                         <li><a class="btn btn-secondary" href="javascript:void(0)"><i class="fa fa-paper-plane me-2"></i>send                                                   </a></li>
+                         <li><a class="btn btn-danger" href="javascript:void(0)">                                                      <i class="fa fa-times me-2"></i>cancel</a></li>
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

@@ -1,0 +1,54 @@
+<app-breadcrumb [title]="'Ribbons'" [items]="['Bonus Ui']" [active_item]="'Ribbons'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Colored Ribbons</h5><span>use class <code>.ribbons-colored .bg-primary</code></span>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            @for (item of ribbonTop; track item) {
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="card">
+                <div class="ribbon-wrapper">
+                  <div class="card-body">
+                    <div class="ribbon ribbon-{{item}} ribbon-space-bottom"> Ribbon</div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                      the industry's standard dummy text.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    @for (color of ribbonColor; track color) {
+    @for (c of color.ribbon; track c) {
+    <div class="col-sm-12 col-md-6 col-xl-4">
+      <div class="ribbon-vertical-{{color.class}}-wrapper card">
+        <div class="card-body">
+          <div class="ribbon ribbon-{{c.color}} ribbon-vertical-{{color.class}}"><i class="{{c.icon}}"></i></div>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text.</p>
+        </div>
+      </div>
+    </div>
+    }
+    }
+    @for (color of ribbon; track color) {
+    @for (c of color.colors; track c) {
+    <div class="col-sm-12 col-md-6 col-xl-4">
+      <div class="{{color.ribbonClass}}">
+        <div class="card-body">
+          <div class="ribbon ribbon-{{c}} {{color.labelClass}}"> Ribbon</div>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text.</p>
+        </div>
+      </div>
+    </div>
+    }
+    }
+  </div>

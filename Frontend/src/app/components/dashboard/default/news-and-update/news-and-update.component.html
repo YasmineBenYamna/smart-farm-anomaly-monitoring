@@ -1,0 +1,41 @@
+<div class="card news-update">
+  <div class="card-header card-no-border">
+    <div class="header-top">
+      <h5 class="m-0">News &amp; Update</h5>
+      <div class="icon-box onhover-dropdown"> <app-feather-icon [icon]="'more-horizontal'"></app-feather-icon>
+        <div class="icon-box-show onhover-show-div">
+          <ul>
+            <li> <a>
+                Today</a></li>
+            <li> <a>
+                Yesterday</a></li>
+            <li> <a>
+                Tommorow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <div class="table-responsive custom-scrollbar">
+      <table class="table table-bordernone">
+        <tbody>
+          @for (data of NewsAndUpdate; track data) {
+          <tr>
+            <td>
+              <div class="media"><img class="img-fluid me-3 b-r-5" src="{{data.image}}" alt="">
+                <div class="media-body"><a href="blog/blog-single">
+                    <h5>{{data.title}}</h5>
+                  </a>
+                  <p>{{data.subTitle}}</p>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-light-theme-light font-theme-light">{{data.day}}</span></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

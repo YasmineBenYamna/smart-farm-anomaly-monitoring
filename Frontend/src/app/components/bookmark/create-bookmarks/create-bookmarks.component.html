@@ -1,0 +1,57 @@
+<div class="email-right-aside bookmark-tabcontent">
+  <div class="card email-body">
+    <div class="ps-0">
+      <div class="tab-content">
+        <div class="tab-pane fade active show" id="pills-created" role="tabpanel" aria-labelledby="pills-created-tab">
+          <div class="card mb-0">
+            <div class="card-header d-flex">
+              <h6 class="mb-0">Created by me</h6>
+              <ul>
+                <li><a class="grid-bookmark-view" href="javascript:void(0)" (click)="changeLayoutBookmark()"><i
+                      data-feather="grid"></i></a></li>
+                <li><a class="list-layout-view" href="javascript:void(0)" (click)="changeLayoutBookmark()"><i
+                      data-feather="list"></i></a></li>
+              </ul>
+            </div>
+            <div class="card-body pb-0">
+              <div class="details-bookmark text-center" [class.list-bookmark]="listBookmark">
+                <div class="row" id="bookmarkData">
+                  @for (bookmark of bookmarks; track bookmark) {
+                  <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 xl-50 box-col-6">
+                    <div class="card bookmark-card o-hidden">
+                      <div class="details-website"><img class="img-fluid" src="{{bookmark.img}}" alt="">
+                        <div class="favourite-icon favourite_0"><a href="javascript:void(0)"><i
+                              class="fa fa-star"></i></a></div>
+                        <div class="desciption-data">
+                          <div class="title-bookmark">
+                            <h6 class="title_0">{{bookmark.title}}</h6>
+                            <p class="weburl_0">{{bookmark.url}}</p>
+                            <div class="hover-block">
+                              <ul>
+                                <li><a (click)="editBookmarkModel()"><i data-feather="edit-2"></i></a></li>
+                                <li><a href="javascript:void(0)"><i data-feather="link"></i></a></li>
+                                <li><a href="javascript:void(0)"><i data-feather="share-2"></i></a></li>
+                                <li><a href="javascript:void(0)"><i data-feather="trash-2"></i></a></li>
+                                <li class="pull-right text-end"><a href="javascript:void(0)"><i
+                                      data-feather="tag"></i></a></li>
+                              </ul>
+                            </div>
+                            <div class="content-general">
+                              <p class="desc_0">{{bookmark.collection}}</p><span
+                                class="collection_0">{{bookmark.collection}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

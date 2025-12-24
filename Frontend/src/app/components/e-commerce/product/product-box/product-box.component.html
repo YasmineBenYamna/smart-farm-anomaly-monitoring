@@ -1,0 +1,95 @@
+<div class="row">
+  @for (product of listData; track product) {
+  <div [class.col-xl-3]="col_xl_3" [class.col-xl-4]="xl_4" [class.col-sm-3]="col_sm_3" [class.col-xl-4]="col_xl_4"
+    [class.col-sm-4]="col_sm_4" [class.col-xl-6]="col_xl_6" [class.col-sm-6]="col_sm_6" [class.col-xl-12]="col_xl_12"
+    [class.col-xl-2]="col_xl_2">
+    <div class="card">
+      <div class="product-box">
+        <div class="product-img">
+          @if (product.status == 'sale') {
+          <div class="ribbon ribbon-danger">{{product.status}}</div>
+          }
+          @if (product.status == '50%') {
+          <div class="ribbon ribbon-success ribbon-right">{{product.status}}
+          </div>
+          }
+          <img class="img-fluid" src="{{product.img}}" alt="">
+          <div class="product-hover">
+            <ul>
+              <li><a href="e-commerce/cart" [routerLink]="['/e-commerce/cart']"><i class="icon-shopping-cart"></i></a>
+              </li>
+              <li><a (click)="openProductDetail(content,product.id)"><i class="icon-eye"></i></a></li>
+              <ng-template #content let-modal>
+                <div class="modal-body" style="padding: 0%;">
+                  <app-quick-view [productDetail]="productDetail"></app-quick-view>
+                  <button type="button" class="btn-close" aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"></button>
+                </div>
+              </ng-template>
+            </ul>
+          </div>
+        </div>
+        <div class="modal fade" id="exampleModalCenter16">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="product-box row">
+                  <div class="product-img col-lg-6"><img class="img-fluid" src="{{product.img}}" alt=""></div>
+                  <div class="product-details col-lg-6 text-start"><a href="e-commerce/product-page">
+                      <h4>{{product.name}}</h4>
+                    </a>
+                    <div class="product-price">$26.00
+                      <del>$35.00</del>
+                    </div>
+                    <div class="product-view">
+                      <h6 class="f-w-600">Product Details</h6>
+                      <p class="mb-0">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo.</p>
+                    </div>
+                    <div class="product-size">
+                      <ul>
+                        <li>
+                          <button class="btn btn-outline-light" type="button">M</button>
+                        </li>
+                        <li>
+                          <button class="btn btn-outline-light" type="button">L</button>
+                        </li>
+                        <li>
+                          <button class="btn btn-outline-light" type="button">Xl</button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="product-qnty">
+                      <h6 class="f-w-600">Quantity</h6>
+                      <fieldset>
+                        <div class="input-group">
+                          <input class="touchspin text-center" type="text" value="5">
+                        </div>
+                      </fieldset>
+                      <div class="addcart-btn"><a class="btn btn-primary me-3" href="e-commerce/cart">Add to Cart </a><a
+                          class="btn btn-primary" href="e-commerce/product-page">View Details</a></div>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn-close" type="button" aria-label="Close"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <div class="rating">
+            <ngb-rating [rate]="product.rating"></ngb-rating>
+          </div>
+          <a href="e-commerce/product-page">
+            <h4>{{product.name}}</h4>
+          </a>
+          <p>{{product.note}}</p>
+          <div class="product-price">${{product.price}}
+            <del>${{product.discountPrice}}</del>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

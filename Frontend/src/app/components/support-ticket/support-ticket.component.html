@@ -1,0 +1,92 @@
+<app-breadcrumb [title]="'Support ticket'" [items]="['Apps']" [active_item]="'Support ticket'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Support Ticket List</h5><span>List of ticket opend by customers</span>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <app-ticket></app-ticket>
+            <div class="table-responsive support-table data-table">
+              <form>
+                <div class="mb-3 row justify-content-end">
+                  <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Search:</label>
+                  <div class="col-xs-3 col-sm-auto">
+                    <input id="table-complete-search" type="text" class="form-control" name="searchTerm"
+                      [(ngModel)]="service.searchTerm">
+                  </div>
+                  @if (service.loading$ | async) {
+                  <span class="col col-form-label">Loading...</span>
+                  }
+                </div>
+                <table class="table table-striped table-border-vertical">
+                  <thead>
+                    <tr>
+                      <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+                      <th scope="col" sortable="position" (sort)="onSort($event)">Position</th>
+                      <th scope="col" sortable="salary" (sort)="onSort($event)">Salary</th>
+                      <th scope="col" sortable="office" (sort)="onSort($event)">Office</th>
+                      <th scope="col" sortable="skill" (sort)="onSort($event)">Skill</th>
+                      <th scope="col" sortable="extn" (sort)="onSort($event)">Extend</th>
+                      <th scope="col" sortable="email" (sort)="onSort($event)">Email</th>
+                      <th scope="col" sortable="exp" (sort)="onSort($event)">Experience</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (country of countries$ | async; track country) {
+                    <tr>
+                      <td scope="row">
+                        <div class='media'>
+                          <img class='rounded-circle img-30 me-3' [src]='country.img'>
+                          <div class='media-body align-self-center'>
+                            <div>{{country.name}}</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>{{country.position}}</td>
+                      <td>{{country.salary}}</td>
+                      <td>{{country.office}}</td>
+                      <td>
+                        <div class='progress-showcase'>
+                          <div class='progress sm-progress-bar'>
+                            <div [ngClass]='country.skill' [ngStyle]="{'width': country.progress}" role='progressbar'>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>{{country.extn | number }}</td>
+                      <td>{{country.email}}</td>
+                      <td>{{country.exp}}</td>
+                      <td>
+                        <span>
+                          <i class="fa fa-eye font-primary pe-2"></i>
+                          <span (click)="deleteTicket(country.id)">
+                            <i class="icofont icofont-close-circled font-danger ps-2"></i>
+                          </span>
+                        </span>
+                      </td>
+                    </tr>
+                    }
+                  </tbody>
+                </table>
+                <div class="d-flex justify-content-between p-2">
+                  <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+                    <option [ngValue]="10">10 items per page</option>
+                    <option [ngValue]="25">25 items per page</option>
+                    <option [ngValue]="50">50 items per page</option>
+                    <option [ngValue]="10">100 items per page</option>
+                  </select>
+                  <ngb-pagination [collectionSize]="(total$ | async)!" [(page)]="service.page"
+                    [pageSize]="service.pageSize">
+                  </ngb-pagination>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

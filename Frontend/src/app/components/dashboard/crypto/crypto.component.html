@@ -1,0 +1,30 @@
+<app-breadcrumb [title]="'Crypto'" [items]="['Dashboard']" [active_item]="'Crypto'"></app-breadcrumb>
+<div class="container-fluid crypto-dash">
+   <div class="row">
+     <div class="col-xl-3 col-md-6">
+      <app-coin [data]="bitcoin"></app-coin>
+     </div>
+     <div class="col-xl-3 col-md-6">
+      <app-coin [data]="ripple"></app-coin>
+     </div>
+     <div class="col-xl-3 col-md-6">
+      <app-coin [data]="ethereum"></app-coin>
+     </div>
+     <div class="col-xl-3 col-md-6">
+      <app-coin [data]="litecoin"></app-coin>
+     </div>
+     <div class="col-xl-4 col-md-6 dash-35">
+       <app-trading-activities></app-trading-activities>
+     </div>
+     <div class="col-xl-4 col-md-6 dash-31">
+       <app-notification></app-notification>
+     </div>
+     <div class="col-xl-3 col-md-12 dash-31">
+       <app-chat></app-chat>
+     </div>
+     <div class="col-xxl-7 col-xl-6 col-lg-12 col-md-6 box-col-6">
+       <app-candlestick-chart-total></app-candlestick-chart-total>
+    </div>
+    <div class="col-xxl-5 col-xl-6 col-md-6 col-lg-12 box-col-6">
+      <app-buy-sell></app-buy-sell>
+    </div>

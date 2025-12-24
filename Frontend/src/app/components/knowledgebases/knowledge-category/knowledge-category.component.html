@@ -1,0 +1,37 @@
+<app-breadcrumb [title]="'knowledge Category'" [items]="['knowledgebase']"
+  [active_item]="'knowledge Category'"></app-breadcrumb>
+<div class="container-fluid faq-section">
+  <div class="row">
+    <div class="col-12">
+      <app-help-board></app-help-board>
+    </div>
+    <app-faq-top-part></app-faq-top-part>
+    <div class="col-sm-12">
+      <div class="header-faq">
+        <h3 class="mb-0">knowledge articles by category</h3>
+      </div>
+      <div class="row browse">
+        @for (category of categories; track category) {
+        <div class="col-xl-4 xl-50 col-md-6">
+          <div class="browse-articles">
+            <h4><span><i data-feather="archive"></i></span>{{category.title}}</h4>
+            <ul>
+              @for (point of category.points; track point) {
+              <li><a routerLink="/knowledgebases/knowledge-detail">
+                  <h5><i data-feather="file-text"></i>{{point}}</h5>
+                </a></li>
+              }
+              <li>
+                <a class="f-w-600 font-primary" href="knowledgebases/knowledge-detail">
+                  <i data-feather="arrow-right"></i>
+                  <span class="ms-1">See More (40)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

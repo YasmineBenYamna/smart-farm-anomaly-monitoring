@@ -1,0 +1,70 @@
+<app-breadcrumb [title]="'Tooltip'" [items]="['Ui Kits']" [active_item]="'Tooltip'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Inline-text Tooltip</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            Placeholder text to demonstrate some <a class="font-primary" data-container="body" data-bs-toggle="tooltip"
+              data-bs-placement="top" title="Popover Text">inline links</a>with tooltips. This is now just filler, no
+            killer. Content placed here just to mimic the presence of real text. And all that just to give you an idea
+            of <a class="font-primary" data-container="body" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Popover Text">these tooltips on links </a>can work in practice, once you use them on your <a
+              class="font-primary" data-container="body" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Popover Text">own site</a>or project.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Basic Tooltip</h5>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            <button class="example-popover btn btn-primary" type="button" placement="top" ngbTooltip="Hover Me">Hover Me</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Directions</h5>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            <button class="btn btn-primary" type="button" data-bs-toggle="tooltip" placement="top"
+              ngbTooltip="Tooltip on top">Tooltip on top</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="tooltip" placement="right"
+              ngbTooltip="Tooltip on right">Tooltip on right</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="tooltip" placement="bottom"
+              ngbTooltip="Tooltip on bottom">Tooltip on bottom</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="tooltip" placement="left"
+              ngbTooltip="Tooltip on left">Tooltip on left</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header pb-0">
+            <h5>HTML elements</h5>
+          </div>
+          <div class="card-body btn-showcase">
+            <button class="btn btn-primary" type="button" placement="top" ngbTooltip="You see, I show up on click!"
+              triggers="click:blur">Click me</button>
+            <button class="btn btn-primary" type="button" placement="end" ngbTooltip="You see, I show up on click!"
+              triggers="click:blur">Click me</button>
+            <button class="btn btn-primary" type="button" placement="bottom" ngbTooltip="You see, I show up on click!"
+              triggers="click:blur">Click me</button>
+            <button class="btn btn-primary" type="button" placement="start" ngbTooltip="You see, I show up on click!"
+              triggers="click:blur">Click me</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

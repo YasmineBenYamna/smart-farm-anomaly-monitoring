@@ -1,0 +1,68 @@
+<div class="email-sidebar"><a class="btn btn-primary email-aside-toggle" (click)="openMenu()" href="javascript:void(0)">To Do filter</a>
+   <div class="email-left-aside" [class.open]="open">
+       <div class="card">
+           <div class="card-body">
+               <div class="email-app-sidebar left-bookmark custom-scrollbar">
+                   <div class="media align-items-center">
+                       <div class="media-size-email">
+                           <img class="me-3 rounded-circle" src="assets/images/user/user.png" alt="">
+                       </div>
+                       <div class="media-body">
+                           <h6 class="f-w-600">MARK JENCO</h6>
+                           <p>Markjecno&#64;gmail.com</p>
+                       </div>
+                   </div>
+                   <ul class="nav main-menu">
+                       <li class="nav-item">
+                           <button class="btn-primary badge-light d-block btn-mail w-100">
+                               <app-feather-icon [icon]="'check-circle'"></app-feather-icon> To Do List
+                           </button>
+                       </li>
+                       <li class="nav-item">
+                           <a href="Javascript:void(0)">
+                               <span class="iconbg badge-light-primary">
+                                   <i data-feather="file-plus"></i>
+                               </span>
+                               <span class="title ms-2"> All Task</span>
+                           </a>
+                       </li>
+                       <li class="nav-item">
+                           <a href="Javascript:void(0)">
+                               <span class="iconbg badge-light-success">
+                                   <i data-feather="check-circle"></i>
+                               </span>
+                               <span class="title ms-2"> Important </span>
+                               <span class="badge badge-success"> 2 </span>
+                           </a>
+                       </li>
+                       <li class="nav-item">
+                           <a href="Javascript:void(0)">
+                               <span class="iconbg badge-light-danger">
+                                   <i data-feather="cast"></i>
+                               </span>
+                               <span class="title ms-2"> Pending </span>
+                               <span class="badge badge-danger"> 3 </span>
+                           </a>
+                       </li>
+                       <li class="nav-item">
+                           <a href="Javascript:void(0)">
+                               <span class="iconbg badge-light-info">
+                                   <i data-feather="activity"></i>
+                               </span>
+                               <span class="title ms-2"> In Progress</span>
+                           </a>
+                       </li>
+                       <li class="nav-item">
+                           <a href="Javascript:void(0)">
+                               <span class="iconbg badge-light-danger">
+                                   <i data-feather="trash"></i>
+                               </span>
+                               <span class="title ms-2"> Trash</span>
+                           </a>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>

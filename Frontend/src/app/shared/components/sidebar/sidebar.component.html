@@ -1,0 +1,190 @@
+<!-- Page Sidebar Start-->
+<div class="logo-wrapper">
+  <a routerLink='/'>
+    <img class="img-fluid for-light" src="assets/images/logo/logo.jpg" alt="">
+    <img class="img-fluid for-dark" src="assets/images/logo/logo_dark.png" alt="">
+  </a>
+  <div class="back-btn" (click)="sidebarToggle()">
+    <i class="fa fa-angle-left"></i>
+  </div>
+</div>
+<nav class="sidebar-main">
+  <div class="left-arrow" id="left-arrow" [class.d-none]="leftArrowNone" (click)="scrollToLeft()">
+    <app-feather-icon [icon]="'arrow-left'"></app-feather-icon>
+  </div>
+  <div id="sidebar-menu" 
+  [ngStyle]="{ marginLeft: layout.config.settings.sidebar == 'horizontal-wrapper' ? margin + 'px' : '0px' }">
+    <ul class="sidebar-links custom-scrollbar" id="scroll">
+      <li class="back-btn">
+        <a href="javascript:void(0)">
+          <img class="img-fluid" src="assets/images/logo/logo.png" alt="">
+        </a>
+        <div class="mobile-back text-end" (click)="sidebarToggle()">
+          <span>Back</span>
+          <i class="fa fa-angle-right ps-2" aria-hidden="true"></i>
+        </div>
+      </li>
+      @for (menuItem of menuItems; track menuItem) {
+      <li [class]="menuItem.headTitle1 ? 'sidebar-main-title' : 'sidebar-list'" [ngClass]="{active: menuItem.active}">
+        @if (menuItem.badgeType && menuItem.badgeValue) {
+        <label class="badge badge-{{menuItem.badgeType}}">{{menuItem.badgeValue}}</label>
+        }
+        <!-- Sub -->
+        @if (menuItem.type === 'sub') {
+        <a href="javascript:void(0)" class="sidebar-link sidebar-title" [class.link-nav]="!menuItem.children"
+          [ngClass]="{active: menuItem.active}" (click)="toggletNavActive(menuItem)">
+          <svg-icon src="assets/svgIcon/{{menuItem.icon}}.svg"></svg-icon>
+          <span>{{menuItem.title }}</span>
+          @if(menuItem.children){
+          <div class="according-menu">
+            <i class="fa fa-angle-{{menuItem.active ? 'down' : 'right'}} pull-right"></i>
+          </div>
+          }
+        </a>
+        }
+        <!-- Link -->
+        @if (menuItem.type === 'link') {
+        <a [routerLink]="!menuItem.type ? null : [menuItem.path]" 
+          [queryParams]="menuItem.queryParams"
+          routerLinkActive="active"
+          class="sidebar-link sidebar-title" [class.link-nav]="!menuItem.children"
+   [ngClass]="{active: menuItem.active}">
+          <svg-icon src="assets/svgIcon/{{menuItem.icon}}.svg"></svg-icon>
+          <span (click)="close()">{{menuItem.title }}</span>
+          @if (menuItem.children) {
+          <div class="according-menu">
+            <i class="fa fa-angle-{{menuItem.active ? 'down' : 'right'}} pull-right"></i>
+          </div>
+          }
+        </a>
+        }
+        <!-- External Link -->
+        @if (menuItem.type === 'extLink') {
+        <a href="{{ !menuItem.type ? null : menuItem.path }}" class="sidebar-link sidebar-title"
+          [class.link-nav]="!menuItem.children" [ngClass]="{active: menuItem.active}">
+          <svg-icon src="assets/svgIcon/{{menuItem.icon}}.svg"></svg-icon>
+          <span>{{menuItem.title}}</span>
+          @if(menuItem.children){
+          <div class="according-menu">
+            <i class="fa fa-angle-{{menuItem.active ? 'down' : 'right'}} pull-right"></i>
+          </div>
+          }
+        </a>
+        }
+        <!-- External Tab Link -->
+        @if (menuItem.type === 'extTabLink') {
+        <a href="{{ !menuItem.type ? null : menuItem.path }}" target="_blank" class="sidebar-link sidebar-title"
+          [class.link-nav]="!menuItem.children" [ngClass]="{active: menuItem.active}">
+          <svg-icon src="assets/svgIcon/{{menuItem.icon}}.svg"></svg-icon>
+          <span>{{menuItem.title }}</span>
+          @if (menuItem.children) {
+          <div class="according-menu">
+            <i class="fa fa-angle-{{menuItem.active ? 'down' : 'right'}} pull-right"></i>
+          </div>
+          }
+        </a>
+        }
+        <!-- 2nd Level Menu -->
+        @if (menuItem.children) {
+        <ul class="sidebar-submenu" [ngClass]="{active: menuItem.active}"
+          [ngClass]="{'menu-open': menuItem.active, 'menu-close': !menuItem.active }"
+          [style.display]="menuItem.active ? 'block' : 'none'">
+          @for (childrenItem of menuItem.children; track childrenItem) {
+          <li [ngClass]="{active: childrenItem.active}">
+            <!-- Sub -->
+            @if (childrenItem.type === 'sub') {
+            <a class="submenu-title" href="javascript:void(0)" (click)="toggletNavActive(childrenItem)">
+              <span>{{childrenItem.title}}</span>
+              @if (childrenItem.children) {
+              <div class="according-menu">
+                <i class="fa fa-angle-{{childrenItem.active ? 'down' : 'right'}} pull-right"></i>
+              </div>
+              }
+            </a>
+            }
+            <!-- Link -->
+            @if (childrenItem.type === 'link') {
+              <a [routerLink]="!childrenItem.type ? null : [childrenItem.path]" 
+                [queryParams]="childrenItem.queryParams"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+              <span>{{childrenItem.title}}</span>
+              @if (childrenItem.children) {
+              <i class="fa fa-angle-down pull-right"></i>
+              }
+            </a>
+            }
+            <!-- External Link -->
+            @if (childrenItem.type === 'extLink') {
+            <a class="submenu-title" href="{{ !childrenItem.type ? null : childrenItem.path }}"
+              routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              <span>{{childrenItem.title}}</span>
+              @if (childrenItem.children) {
+              <i class="fa fa-angle-down pull-right"></i>
+              }
+            </a>
+            }
+            <!-- External Tab Link -->
+            @if (childrenItem.type === 'extTabLink') {
+            <a class="submenu-title" href="{{ !childrenItem.type ? null : childrenItem.path }}" target="_blank">
+              <span>{{childrenItem.title}}</span>
+              @if (childrenItem.children) {
+              <i class="fa fa-angle-down pull-right"></i>
+              }
+            </a>
+            }
+            <!-- 3rd Level Menu -->
+            @if (childrenItem.children) {
+            <ul class="nav-sub-childmenu submenu-content" [ngClass]="{active: childrenItem.active}"
+              [ngClass]="{'menu-open': childrenItem.active, 'menu-close': !childrenItem.active }"
+              [style.display]="childrenItem.active ? 'block' : 'none'">
+              @for (childrenSubItem of childrenItem.children; track childrenSubItem) {
+              <li [ngClass]="{active: childrenSubItem.active}">
+                <!-- Link -->
+                @if (childrenSubItem.type === 'link') {
+
+                }
+                <a [routerLink]="!childrenSubItem.type ? null : [childrenSubItem.path]" 
+                    [queryParams]="childrenSubItem.queryParams"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">
+                  <span> {{childrenSubItem.title}}</span>
+                </a>
+                <!-- External Link -->
+                @if (childrenSubItem.type === 'extLink') {
+                <a href="{{ !childrenSubItem.type ? null : childrenSubItem.path }}" routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact: true}">
+                  <span>{{childrenSubItem.title}}</span>
+                </a>
+                }
+                <!-- External Tab Link -->
+                @if (childrenSubItem.type === 'extTabLink') {
+                <a href="{{ !childrenSubItem.type ? null : childrenSubItem.path }}" target="_blank">
+                  <span (click)="close()">{{childrenSubItem.title}}</span>
+                </a>
+                }
+
+              </li>
+              }
+            </ul>
+            }
+
+          </li>
+          }
+        </ul>
+        }
+      </li>
+      }
+    </ul>
+    <!--<div class="sidebar-img-section">
+      <div class="sidebar-img-content"><img class="img-fluid" src="assets/images/side-bar.png" alt="">
+        <h4>Need Help ?</h4><a class="txt" href="https://pixelstrap.freshdesk.com/support/home">Raise ticket at
+          "support&#64;pixelstrap.com"</a><a class="btn btn-secondary"
+          href="https://themeforest.net/user/pixelstrap/portfolio">Buy Now</a>
+      </div>
+    </div>-->
+  </div>
+  <div class="right-arrow" id="right-arrow" [class.d-none]="rightArrowNone" (click)="scrollToRight()">
+    <app-feather-icon [icon]="'arrow-right'"></app-feather-icon>
+  </div>
+</nav>
