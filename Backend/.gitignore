@@ -1,0 +1,42 @@
+# =========================
+# Python / Backend
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Django / ML artifacts
+trained_models/
+*.pkl
+
+# =========================
+# Frontend (React / Angular)
+# =========================
+FrontendCrop/node_modules/
+FrontendCrop/dist/
+FrontendCrop/build/
+
+# =========================
+# Environment & secrets
+# =========================
+.env
+.env.*
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Logs
+# =========================
+*.log
