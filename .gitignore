@@ -1,0 +1,28 @@
+# Python / Backend
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+trained_models/
+*.pkl
+
+# Frontend (Angular/React)
+node_modules/
+dist/
+build/
+
+# Environnements & secrets
+.env
+.env.*
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
